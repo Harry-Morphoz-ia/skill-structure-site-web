@@ -86,7 +86,7 @@ animés React là où il faut un effet fort.
 | 0 | Fondations git + structure du kit | ✅ fait |
 | 1 | Squelette de base HTML/CSS (sert de base au template Astro) | ✅ fait |
 | 2 | Skill `/site-start` : cahier des charges webmaster complet | ✅ fait |
-| 3 | Skill `/site-style` : palette + typo + test de contraste + choix animations | ⬜ |
+| 3 | Skill `/site-style` : palette + typo + test de contraste + choix animations | ✅ fait |
 | 4 | Passage du template en Astro + connecteurs d'animations (21st.dev / Aceternity) | ⬜ |
 | 5 | Skill `/site-construire` : génère le site Astro depuis brief + tokens | ⬜ |
 | 6 | Règles webmaster auto-chargées (Hn, typo, boutons, contraste, images) | ⬜ |
