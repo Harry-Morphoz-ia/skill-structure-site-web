@@ -68,6 +68,37 @@ cp -r .claude/rules/*  <ton-projet>/.claude/rules/
 Puis lance `/site-start` pour cadrer ton premier site.
 **Guide pas à pas complet** (de zéro à la mise en ligne) : `docs/guide-creation-site.md`.
 
+---
+
+## Ton kit t'appartient
+
+Ce dépôt est un **point de départ**, pas un service central. Une fois récupéré, ta copie est
+**à toi** : tu peux tout modifier (questions, template, règles, docs) sans que ça passe par
+qui que ce soit, et tes modifications ne toucheront jamais le kit d'origine. Symétriquement,
+personne (auteur du kit compris) n'a accès à ta copie.
+
+Pour avoir ton propre kit versionné sur ton compte GitHub :
+
+**Option 1 (la plus simple) : le bouton « Fork »** en haut de la page GitHub du kit →
+une copie complète est créée sur ton compte, indépendante, à ton nom.
+
+**Option 2 : clone + ton propre dépôt**
+
+```bash
+git clone https://github.com/Harry-Morphoz-ia/skill-structure-site-web.git mon-kit-site-web
+cd mon-kit-site-web
+git remote remove origin
+# crée un dépôt vide sur ton compte github.com, puis :
+git remote add origin https://github.com/<toncompte>/mon-kit-site-web.git
+git push -u origin main
+```
+
+Pense à remplacer « votre société » dans le fichier `LICENSE` par ton nom.
+
+*(Optionnel, pour les à l'aise : si tu veux pouvoir récupérer plus tard les améliorations du
+kit d'origine dans ta copie : `git remote add upstream https://github.com/Harry-Morphoz-ia/skill-structure-site-web.git`
+puis, quand tu veux, `git fetch upstream && git merge upstream/main`.)*
+
 ### Lancer un site (template Astro)
 
 ```bash
