@@ -36,6 +36,19 @@ Marqueurs interdits, sans exception :
   L'ordre, le nombre et le type des sections s'adaptent au secteur et aux références du
   brief (un traiteur montre ses plats en grand, un consultant montre ses résultats).
 
+## Anti « site daté » — un site vivant et actuel
+
+Un site du kit doit avoir l'air conçu cette année, pas il y a dix ans :
+
+- **Le mouvement intégré du template reste actif** : reveal au défilement, entrée du hero,
+  survols riches. Ne jamais les retirer, sauf brief « quasi statique » explicite.
+- **Varier la mise en page des sections** : alterner grilles de cartes, sections split
+  (texte + image), bande sombre, FAQ... Trois sections identiques qui s'empilent = daté.
+- **Hero avec de la matière** : eyebrow (pastille au-dessus du titre), titre fort, sous-titre,
+  deux CTA. Un titre seul centré sur fond uni = daté.
+- **Composants copiés** (21st.dev, Aceternity, capture) : toujours intégrés via la procédure
+  de `integration-composant.md`, jamais rendus en code brut dans la conversation.
+
 ## Contenus
 
 - Jamais de tiret cadratin dans un contenu produit : tiret demi-cadratin ( – ), virgule,

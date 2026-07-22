@@ -30,15 +30,27 @@ Chargées automatiquement dès qu'une feuille de style d'un site du kit est édi
 - Images fluides : `max-width: 100%` + `object-fit: cover` + `aspect-ratio`.
 - Interdit : un élément qui crée un défilement horizontal sur mobile.
 
-## Animations
+## Animations : un site vivant par défaut
 
+- **Un site du kit n'est jamais figé.** Le minimum sur tout site (déjà intégré au template,
+  ne pas le retirer sauf brief « quasi statique ») : apparition des blocs au défilement
+  (système `.reveal` + script du BaseLayout), entrée animée du hero, survols riches sur
+  cartes / images / boutons.
+- Marqueurs « site daté » interdits : sections qui apparaissent toutes d'un bloc sans
+  transition, survols inertes (aucun retour visuel), hero totalement immobile, ombres grises
+  par défaut au lieu des ombres dérivées de la palette.
 - Toute animation respecte `prefers-reduced-motion: reduce` (le reset du kit s'en charge :
   ne pas le contourner).
 - Transitions courtes (`var(--transition)`, ~200ms) pour les survols ; les effets riches
   passent par les composants de `src/components/animated/`.
+- Courbe du kit pour les entrées : `cubic-bezier(0.22, 0.61, 0.36, 1)` (déjà utilisée par
+  le reveal et le hero), pour garder un mouvement cohérent partout.
 
 ## Interdits
 
-- Pas de framework CSS (Bootstrap, Tailwind...) dans les sites du kit, sauf décision explicite.
+- Pas de framework CSS (Bootstrap, Tailwind...) pour le style du site lui-même.
+  **Exception îlots animés** : un composant React copié (21st.dev, Aceternity) qui repose
+  sur Tailwind peut l'utiliser (`npx astro add tailwind`) ; ses couleurs passent quand même
+  par les tokens (`bg-[var(--c-primary)]`), voir `integration-composant.md`.
 - Pas de `!important`, sauf le bloc accessibilité `prefers-reduced-motion` du kit.
 - Pas de styles inline dans les pages pour ce que les classes du kit savent déjà faire.

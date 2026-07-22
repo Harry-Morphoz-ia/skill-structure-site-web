@@ -89,12 +89,22 @@ typo, et justification en une phrase par choix.
 
 ### Étape 6 — Plan d'animation (selon brief section J)
 
-- **Quasi statique** → aucune animation ajoutée.
-- **Discrètes** → animations CSS (apparition au défilement, survols). Pas de dépendance.
-- **Très animé (effet wow)** → prévoir les composants React animés dans la phase Astro :
-  - Signaler qu'il faudra activer le connecteur **21st.dev (Magic MCP)** : clé API sur `21st.dev/magic/console`, ajoutée au `.mcp.json`.
-  - Et/ou piocher des composants **Aceternity UI** à intégrer en îlots Astro.
-  - Lister ici 2 à 3 effets visés (hero animé, cartes au survol, fond en dégradé animé).
+**Le kit anime par défaut.** Le template embarque déjà : apparition des blocs au défilement
+(reveal en cascade), entrée animée du hero, survols riches (cartes, images, boutons).
+Un site sans aucun mouvement est un site raté, sauf demande explicite du client.
+
+Les niveaux du brief pilotent le SUPPLÉMENT, pas le minimum :
+
+- **Quasi statique** (rare, à la demande explicite du client) → retirer le script « vie du
+  site » du `BaseLayout.astro` et l'entrée animée du hero. Tout le reste du kit s'applique.
+- **Discrètes** (le défaut) → les animations intégrées du template suffisent. Rien à ajouter,
+  rien à retirer.
+- **Très animé (effet wow)** → EN PLUS des animations du template :
+  - `<Hero animated />` (fond aurora) ou un hero remplacé par un composant externe.
+  - 1 à 2 composants **21st.dev** ou **Aceternity UI**, intégrés selon la procédure de
+    `.claude/rules/integration-composant.md` (fichier .tsx adapté aux tokens, monté en îlot,
+    jamais du code brut en conversation).
+  - Lister ici les 2 à 3 effets visés (hero animé, section clé, fond en mouvement).
 
 ### Étape 7 — Router
 

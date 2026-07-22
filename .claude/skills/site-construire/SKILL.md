@@ -96,10 +96,17 @@ Depuis le brief :
 
 ### Étape 8 — Animations (section J)
 
-- **Très animé** → `<Hero animated ... />` + proposer 1-2 composants complémentaires
-  (voir `docs/animations.md`). Ne pas surcharger : hero + un effet maximum.
-- **Discrètes** → pas d'îlot React ; transitions CSS existantes seulement.
-- **Quasi statique** → rien.
+Le template anime déjà par défaut (reveal au défilement, entrée du hero, survols riches) :
+tout site construit est vivant sans rien ajouter. Selon le niveau du brief :
+
+- **Très animé** → `<Hero animated ... />` + 1-2 composants complémentaires 21st.dev ou
+  Aceternity, intégrés selon `.claude/rules/integration-composant.md` : fichier
+  `src/components/animated/*.tsx`, couleurs remplacées par les tokens, textes du brief,
+  monté en îlot (`client:visible`), build vérifié. JAMAIS de code collé en brut dans la
+  conversation. Ne pas surcharger : hero + un effet fort maximum.
+- **Discrètes** → les animations intégrées du template suffisent, pas d'îlot React à ajouter.
+- **Quasi statique** → retirer le script « vie du site » du `BaseLayout.astro` et l'entrée
+  animée du hero (bloc `@keyframes hero-rise` du CSS).
 
 ### Étape 9 — Médias
 

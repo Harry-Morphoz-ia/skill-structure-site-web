@@ -1,9 +1,18 @@
 # Animations « wow » — 21st.dev & Aceternity
 
-Pour les sites marqués **« très animé »** dans le brief, on ajoute des composants animés
-issus de 21st.dev et d'Aceternity UI. Ce sont des composants **React** : on les intègre
-dans le template Astro sous forme d'« îlots » (des morceaux interactifs au milieu d'un site
-statique).
+> **Tout site du kit est déjà animé par défaut** : apparition des blocs au défilement,
+> entrée en cascade du hero, survols riches (cartes, images, boutons). C'est intégré au
+> template, il n'y a rien à activer. Cette page couvre le niveau AU-DESSUS : les composants
+> « wow » pour les sites marqués **« très animé »** dans le brief.
+
+Pour ces sites, on ajoute des composants animés issus de 21st.dev et d'Aceternity UI.
+Ce sont des composants **React** : on les intègre dans le template Astro sous forme
+d'« îlots » (des morceaux interactifs au milieu d'un site statique).
+
+> ⚠️ **Règle absolue d'intégration** : un composant copié n'est JAMAIS livré en code brut
+> dans la conversation. Il devient un fichier `src/components/animated/*.tsx`, adapté aux
+> tokens du site (couleurs, polices) et aux textes du brief, monté en îlot, build vérifié.
+> Procédure complète : `.claude/rules/integration-composant.md`.
 
 > ⚠️ **Sécurité — à lire absolument**
 > Ta clé API 21st.dev est **personnelle et secrète**. Elle ne doit **jamais** apparaître dans
@@ -61,7 +70,9 @@ dans un composant Astro et à appeler en îlot.
 Aucune clé ni compte. On pioche les composants sur <https://ui.aceternity.com>.
 
 1. Choisis un composant sur le site, copie son code React (ou utilise la CLI shadcn indiquée).
-2. Colle-le dans `src/components/` en tant que composant React (`.tsx`).
+2. Colle-le dans `src/components/animated/` en tant que composant React (`.tsx`), puis
+   **adapte-le** : couleurs → tokens (`var(--c-primary)`...), textes de démo → contenus du
+   brief, dépendances installées (`motion`, Tailwind via `npx astro add tailwind` si besoin).
 3. Utilise-le dans une page Astro comme îlot :
 
 ```astro

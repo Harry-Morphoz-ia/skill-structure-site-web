@@ -45,5 +45,29 @@ const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site).href : nu
     <slot />
   </main>
   <Footer />
+
+  <script is:inline>
+    // Vie du site : fait apparaître les blocs au défilement (zéro dépendance).
+    // Respecte prefers-reduced-motion et reste invisible pour les moteurs (contenu déjà dans le HTML).
+    document.documentElement.classList.add('js');
+    if (!matchMedia('(prefers-reduced-motion: reduce)').matches && 'IntersectionObserver' in window) {
+      var cibles = document.querySelectorAll(
+        'main .reveal, main .section-title, main .section-lead, main .card, main .grid > *, main .split > *, main .faq-item, main .contact-form'
+      );
+      var obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) { e.target.classList.add('is-visible'); obs.unobserve(e.target); }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+      var compteurs = new Map();
+      cibles.forEach(function (el) {
+        el.classList.add('reveal');
+        var i = compteurs.get(el.parentElement) || 0;   // cascade entre voisins d'un même bloc
+        el.style.setProperty('--reveal-delay', Math.min(i * 90, 450) + 'ms');
+        compteurs.set(el.parentElement, i + 1);
+        obs.observe(el);
+      });
+    }
+  </script>
 </body>
 </html>
