@@ -127,7 +127,7 @@ h1, h2, h3 { font-family: var(--font-title); line-height: 1.15; font-weight: 700
   background-size: cover; background-position: center;
   overflow: hidden;
 }
-.hero-inner { padding-block: var(--section-y); max-width: 42rem; }
+.hero-inner { position: relative; z-index: 1; padding-block: var(--section-y); max-width: 42rem; }
 .hero-title { font-size: var(--fs-h1); color: #fff; }
 .hero-sub { font-size: var(--fs-body); color: rgba(255,255,255,0.82); margin-block: 1.25rem 2rem; }
 .hero-cta { display: flex; flex-wrap: wrap; gap: 1rem; }

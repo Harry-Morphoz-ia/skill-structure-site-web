@@ -106,7 +106,7 @@ animés React là où il faut un effet fort.
 | 1 | Squelette de base HTML/CSS (sert de base au template Astro) | ✅ fait |
 | 2 | Skill `/site-start` : cahier des charges webmaster complet | ✅ fait |
 | 3 | Skill `/site-style` : palette + typo + test de contraste + choix animations | ✅ fait |
-| 4 | Passage du template en Astro (multi-pages) ✅ + connecteurs d'animations 21st.dev / Aceternity ⬜ | 🟡 en cours |
+| 4 | Template Astro multi-pages + React + effet aurora fourni (21st/Aceternity en copier-coller, voir docs/animations.md) | ✅ fait |
 | 5 | Skill `/site-construire` : génère le site Astro depuis brief + tokens | ⬜ |
 | 6 | Règles webmaster auto-chargées (Hn, typo, boutons, contraste, images) | ⬜ |
 | 7 | SEO (meta, sitemap, JSON-LD) | ⬜ |

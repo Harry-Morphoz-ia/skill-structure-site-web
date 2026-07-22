@@ -75,6 +75,27 @@ La version Pro (199 $, paiement unique) ajoute des composants et templates premi
 
 ---
 
+## Composant fourni avec le kit : AuroraBackground
+
+Le template inclut déjà un effet « wow » prêt à l'emploi :
+`src/components/animated/AuroraBackground.tsx` (halos de couleur flous en mouvement lent
+derrière le hero). Ses couleurs viennent **automatiquement de la palette du site**.
+
+Activation / désactivation en un mot, dans une page :
+
+```astro
+<Hero animated title="..." />   <!-- avec l'effet -->
+<Hero title="..." />            <!-- sans l'effet (site sobre) -->
+```
+
+## État du connecteur 21st.dev (à date)
+
+La clé et l'authentification fonctionnent, mais la version actuelle du serveur
+`@21st-dev/magic` renvoie parfois ses réponses dans un format illisible pour le client MCP
+(`[object Object]`). Contournement en attendant leur correctif : piocher les composants
+directement sur <https://21st.dev> (copier-coller, comme Aceternity). Retester le connecteur
+après mise à jour (`@latest` est déjà utilisé, il se mettra à jour seul).
+
 ## Règle d'usage
 
 - Réserver ces composants aux endroits à fort impact (hero, section clé), pas partout : un site

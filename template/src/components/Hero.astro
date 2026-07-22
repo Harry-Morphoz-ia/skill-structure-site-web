@@ -1,9 +1,12 @@
 ---
 // Section d'accueil. Un seul <h1> par page : à n'utiliser qu'une fois.
 // Fond sombre + hero.jpg (déposé dans public/assets/images/hero/).
-const { title, subtitle, ctaPrimary, ctaGhost } = Astro.props;
+// Option `animated` : active le fond animé « aurora » (sites très animés).
+import AuroraBackground from './animated/AuroraBackground.tsx';
+const { title, subtitle, ctaPrimary, ctaGhost, animated = false } = Astro.props;
 ---
 <section class="hero">
+  {animated && <AuroraBackground client:load />}
   <div class="container hero-inner">
     <h1 class="hero-title">{title}</h1>
     {subtitle && <p class="hero-sub">{subtitle}</p>}
