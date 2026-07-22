@@ -90,6 +90,9 @@ ou brancher un déploiement automatique.
  charges           +contraste         Astro + animations
 ```
 
+Après la mise en ligne, le site vit avec **`/site-modification`** : toute évolution passe
+par une sauvegarde git, les bonnes méthodes, et une re-vérification avant republication.
+
 ## Stack cible des sites
 
 **Astro** : produit du HTML statique rapide, publiable sur n'importe quel hébergement statique
@@ -116,6 +119,7 @@ animés React là où il faut un effet fort.
 | 8 | Vérification : skill `/site-verifier` + outil verifier.mjs (GO/NO-GO) | ✅ fait |
 | 9 | Guide de migration d'un site existant vers le kit | ⬜ |
 | 10 | Documentation finale (`docs/guide-creation-site.md`) | ✅ fait |
+| 11 | Cycle de vie : `/site-modification` + mise en ligne multi-hébergeurs + tuto formulaire | ✅ fait |
 
 **Option plus tard :** référencement sur les IA (llms.txt + données structurées enrichies pour
 être cité par les assistants IA), après le SEO classique.

@@ -1,0 +1,43 @@
+# ================================================================
+# Déploiement automatique : build Astro + envoi FTP
+# Pour les hébergements FTP (Hostinger, OVH, o2switch...).
+# Vercel/Netlify n'en ont pas besoin (ils buildent tout seuls).
+#
+# ACTIVATION (voir docs/mise-en-ligne.md du kit) :
+# 1. Renommer ce fichier : deploy.yml.example -> deploy.yml
+# 2. Ajouter les 3 secrets FTP dans GitHub (Settings > Secrets > Actions)
+# 3. Adapter server-dir : public_html/ (Hostinger) ou www/ (OVH)
+# Tant qu'il garde l'extension .example, ce fichier est inactif.
+# ================================================================
+name: Déploiement (build + FTP)
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Récupérer le code
+        uses: actions/checkout@v4
+
+      - name: Installer Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Installer les dépendances
+        run: npm ci
+
+      - name: Construire le site
+        run: npm run build
+
+      - name: Envoyer dist/ sur l'hébergement
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: dist/
+          server-dir: public_html/

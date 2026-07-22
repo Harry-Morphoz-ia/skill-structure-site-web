@@ -99,12 +99,11 @@ et avec quel skill.
 
 ### Étape 6 : la mise en ligne
 
-```bash
-npm run build     # génère le dossier dist/ (les fichiers finaux)
-```
-
-Publie le contenu de `dist/` sur ton hébergement (Hostinger, Netlify, Vercel, OVH...),
-en upload direct ou via un déploiement automatique.
+Suis le guide `docs/mise-en-ligne.md`, qui couvre **tous les hébergeurs** :
+- **Vercel / Netlify** : branchés sur ton dépôt GitHub, site mis à jour à chaque `git push`
+- **Hostinger / OVH / FTP** : déploiement automatique fourni par le kit
+  (`deploy.yml.example` à activer + 3 secrets FTP)
+- **FTP manuel** en dépannage
 
 **Puis déclare le site à Google** (il n'apparaît pas tout seul) : suis le tuto pas à pas
 `docs/indexation-google.md` (Search Console, sitemap, demande d'indexation, fiche Google
@@ -126,8 +125,13 @@ Compresse tes images sur squoosh.app avant de les déposer.
 
 ## Questions fréquentes
 
-**Modifier un texte après coup ?** Dis-le simplement à Claude (« change le titre de la page
-services en ... »). Les règles webmaster restent appliquées automatiquement.
+**Modifier le site après coup ?** Lance `/site-modification` : il sécurise la modification
+(sauvegarde git avant de toucher, bonnes méthodes par type de changement, jamais d'URL
+cassée, re-vérification obligatoire avant republication).
+
+**Brancher le formulaire de contact ?** Voir `docs/formulaire-contact.md` (Formspree en
+5 minutes, ou webhook n8n / Brevo). Sans branchement, le contrôle qualité bloque la mise
+en ligne.
 
 **Changer une couleur ?** Demande la modification : la nouvelle couleur repasse par le test
 de contraste avant d'être acceptée.
