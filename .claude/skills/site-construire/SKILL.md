@@ -64,8 +64,14 @@ Depuis le brief :
   page : un seul H1 = le titre décidé, contenu selon le rôle décrit dans le brief, CTA vers
   la conversion. Supprimer les pages d'exemple non retenues. La nav (`site.js`) liste
   exactement ces pages.
-- Composants disponibles : `Hero`, `Card`, `MediaBox`, `ContactForm`, sections
-  `.section` / `.section-alt` / `.split` (voir les pages d'exemple du template).
+- Composants disponibles : `Hero` (props `eyebrow`, `titleAccent`, `animated`), `Card`,
+  `Stats` (compteurs animés), `MediaBox`, `ContactForm`, sections `.section` /
+  `.section-alt` / `.section-dark` / `.split`, grille `.bento` (voir les pages d'exemple).
+- **Rythme visuel obligatoire (anti « WordPress »)** : varier les mises en page au fil de
+  la page (cartes, split, bande sombre, bento...) et utiliser au moins deux blocs modernes
+  du kit par site : `titleAccent` en dégradé dans le hero, bande `.section-dark` avec
+  `Stats` (chiffres réels du brief), `.bento` pour les réalisations, `.card-glass` sur
+  fond sombre. Trois sections identiques empilées = rendu daté, interdit.
 - **Pages système (dans tous les cas, ne jamais les supprimer)** :
   - `404.astro` : adapter le ton au client.
   - `mentions-legales.astro` : remplir TOUS les `[À VALIDER]` avec les infos réelles du

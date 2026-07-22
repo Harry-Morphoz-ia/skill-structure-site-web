@@ -4,12 +4,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
 import Card from '../components/Card.astro';
 import MediaBox from '../components/MediaBox.astro';
+import Stats from '../components/Stats.astro';
 import { site } from '../config/site.js';
 ---
 <BaseLayout current="/">
   <Hero
     animated
-    title="La promesse principale du site, en une phrase forte."
+    eyebrow="Votre secteur, votre zone"
+    title="La promesse principale du site,"
+    titleAccent="en une phrase forte."
     subtitle="Le sous-titre qui précise pour qui, et pourquoi c'est différent. Une à deux lignes."
     ctaPrimary={site.cta}
     ctaGhost={{ label: 'En savoir plus', href: '/services' }}
@@ -25,6 +28,20 @@ import { site } from '../config/site.js';
         <Card num="02" title="Deuxième service">Bénéfice concret pour le client, pas la fonctionnalité.</Card>
         <Card num="03" title="Troisième service">Bénéfice concret pour le client, pas la fonctionnalité.</Card>
       </div>
+    </div>
+  </section>
+
+  <!-- Chiffres clés (bande sombre, compteurs animés) : chiffres RÉELS du brief uniquement -->
+  <section class="section section-dark">
+    <div class="container">
+      <h2 class="section-title">Des chiffres qui parlent</h2>
+      <p class="section-lead">[À VALIDER] Remplacer par les vrais chiffres du client.</p>
+      <Stats items={[
+        { value: 120, suffix: '+', label: 'Projets livrés' },
+        { value: 15, label: "Années d'expérience" },
+        { value: 98, suffix: '%', label: 'Clients satisfaits' },
+        { value: 24, suffix: 'h', label: 'Délai de réponse' },
+      ]} />
     </div>
   </section>
 

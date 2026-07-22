@@ -38,6 +38,9 @@
   --radius-btn: 8px;
   --shadow:     0 8px 30px rgba(15, 15, 15, 0.06);
   --transition: 200ms ease;
+
+  /* Dégradé de marque : TOUJOURS dérivé de la palette du site, jamais générique */
+  --gradient: linear-gradient(120deg, var(--c-primary), var(--c-primary-soft));
 }
 
 /* ----------------------------------------------------------------
@@ -65,6 +68,48 @@ h1, h2, h3 { font-family: var(--font-title); line-height: 1.15; font-weight: 700
 .section-alt { background: var(--c-surface-alt); }
 .section-title { font-size: var(--fs-h2); margin-bottom: 0.5rem; }
 .section-lead { color: var(--c-text-soft); margin-bottom: 2.5rem; max-width: 60ch; }
+
+/* Mot ou groupe de mots en dégradé de marque (hero, titres) */
+.text-gradient {
+  background: var(--gradient);
+  -webkit-background-clip: text; background-clip: text;
+  color: transparent;
+}
+
+/* Bande sombre : section à fort impact (chiffres, CTA final), halo dérivé de la palette */
+.section-dark {
+  position: relative; overflow: hidden;
+  background-color: var(--c-bg-dark); color: #fff;
+}
+.section-dark::before {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(55% 65% at 50% 0%, color-mix(in srgb, var(--c-primary) 28%, transparent), transparent 70%);
+}
+.section-dark > .container { position: relative; }
+.section-dark .section-title { color: #fff; }
+.section-dark .section-lead, .section-dark p { color: rgba(255,255,255,0.75); }
+
+/* Chiffres clés (compteurs animés par le script du BaseLayout via data-count) */
+.stats { display: grid; gap: 2rem 1rem; grid-template-columns: repeat(2, 1fr); text-align: center; }
+.stat-number {
+  font-family: var(--font-title); font-weight: 700; line-height: 1;
+  font-size: clamp(2.2rem, 4vw + 1rem, 3.6rem);
+  background: var(--gradient); -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.stat-label { margin-top: 0.5rem; font-size: var(--fs-small); color: var(--c-text-soft); }
+.section-dark .stat-label { color: rgba(255,255,255,0.7); }
+
+/* Carte « verre » : à poser sur un fond sombre ou une image */
+.card-glass {
+  background: color-mix(in srgb, #fff 8%, transparent);
+  border: 1px solid color-mix(in srgb, #fff 18%, transparent);
+  backdrop-filter: blur(10px);
+  border-radius: var(--radius); padding: 2rem 1.75rem; color: #fff;
+}
+.card-glass p { color: rgba(255,255,255,0.75); }
+
+/* Grille bento : mise en page asymétrique (1 bloc vedette + blocs standard) */
+.bento { display: grid; gap: 1.5rem; }
 
 /* Texte long structuré (mentions légales, articles) */
 .prose h2 { font-size: var(--fs-h3); margin: 2rem 0 0.5rem; }
@@ -154,12 +199,26 @@ h1, h2, h3 { font-family: var(--font-title); line-height: 1.15; font-weight: 700
 .hero {
   position: relative;
   display: grid; align-items: center; min-height: 78vh;
-  /* Fond TOUJOURS sombre : voile sombre + hero.jpg (si déposé). Sans image,
-     seul le voile + le fond sombre restent. Texte blanc lisible dans les 2 cas. */
+  /* Fond TOUJOURS sombre : halos aux couleurs du site + voile sombre + hero.jpg (si déposé).
+     Sans image, halos + fond sombre restent. Texte blanc lisible dans les 2 cas. */
   background-color: var(--c-bg-dark, #08090E);
-  background-image: linear-gradient(rgba(8,9,14,0.55), rgba(8,9,14,0.55)), url('/assets/images/hero/hero.jpg');
+  background-image:
+    radial-gradient(55% 65% at 78% 12%, color-mix(in srgb, var(--c-primary) 38%, transparent), transparent 70%),
+    radial-gradient(45% 55% at 8% 90%, color-mix(in srgb, var(--c-primary-soft) 22%, transparent), transparent 70%),
+    linear-gradient(rgba(8,9,14,0.55), rgba(8,9,14,0.55)),
+    url('/assets/images/hero/hero.jpg');
   background-size: cover; background-position: center;
   overflow: hidden;
+}
+/* Fine trame en surimpression, fondue vers les bords (texture, pas décor) */
+.hero::before {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.045) 1px, transparent 1px);
+  background-size: 44px 44px;
+  -webkit-mask-image: radial-gradient(75% 75% at 50% 35%, #000, transparent);
+  mask-image: radial-gradient(75% 75% at 50% 35%, #000, transparent);
 }
 .hero-inner { position: relative; z-index: 1; padding-block: var(--section-y); max-width: 42rem; }
 .hero-eyebrow {
@@ -278,6 +337,9 @@ h1, h2, h3 { font-family: var(--font-title); line-height: 1.15; font-weight: 700
   .grid-3 { grid-template-columns: repeat(2, 1fr); }
   .split { grid-template-columns: 1fr 1fr; }
   .footer-inner { flex-direction: row; justify-content: space-between; align-items: center; }
+  .stats { grid-template-columns: repeat(4, 1fr); }
+  .bento { grid-template-columns: repeat(3, 1fr); }
+  .bento-lg { grid-column: span 2; }
 }
 
 @media (min-width: 1024px) {

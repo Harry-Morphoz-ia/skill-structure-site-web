@@ -1,0 +1,16 @@
+---
+// Bande de chiffres clés, compteurs animés à l'apparition (script du BaseLayout).
+// Usage : <Stats items={[{ value: 120, suffix: '+', label: 'Projets livrés' }]} />
+// RÈGLE : uniquement des chiffres RÉELS venant du brief. Aucun chiffre inventé.
+const { items = [] } = Astro.props;
+---
+<div class="stats">
+  {items.map((s) => (
+    <div class="stat">
+      <div class="stat-number">
+        <span data-count={s.value} data-suffix={s.suffix || ''}>{s.value}{s.suffix || ''}</span>
+      </div>
+      <div class="stat-label">{s.label}</div>
+    </div>
+  ))}
+</div>

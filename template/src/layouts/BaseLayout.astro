@@ -67,6 +67,31 @@ const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site).href : nu
         compteurs.set(el.parentElement, i + 1);
         obs.observe(el);
       });
+
+      // Chiffres clés : compte de 0 jusqu'à la valeur quand la bande devient visible.
+      // Le HTML contient déjà la valeur finale (lisible sans JS et par les moteurs).
+      var nombres = document.querySelectorAll('[data-count]');
+      if (nombres.length) {
+        var obsNum = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (!e.isIntersecting) return;
+            obsNum.unobserve(e.target);
+            var el = e.target;
+            var fin = parseFloat(el.getAttribute('data-count'));
+            var suffixe = el.getAttribute('data-suffix') || '';
+            var depart = null;
+            function pas(t) {
+              if (depart === null) depart = t;
+              var p = Math.min((t - depart) / 1200, 1);
+              var facilite = 1 - Math.pow(1 - p, 3);
+              el.textContent = Math.round(fin * facilite) + suffixe;
+              if (p < 1) requestAnimationFrame(pas);
+            }
+            requestAnimationFrame(pas);
+          });
+        }, { threshold: 0.4 });
+        nombres.forEach(function (el) { obsNum.observe(el); });
+      }
     }
   </script>
 </body>

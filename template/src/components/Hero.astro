@@ -3,14 +3,15 @@
 // Fond sombre + hero.jpg (déposé dans public/assets/images/hero/).
 // Option `animated` : active le fond animé « aurora » (sites très animés).
 // Option `eyebrow` : petite pastille au-dessus du titre (ex : « Traiteur en Seine-et-Marne »).
+// Option `titleAccent` : fin du titre en dégradé de marque (ex : title="Des événements" titleAccent="inoubliables.").
 import AuroraBackground from './animated/AuroraBackground.tsx';
-const { eyebrow, title, subtitle, ctaPrimary, ctaGhost, animated = false } = Astro.props;
+const { eyebrow, title, titleAccent, subtitle, ctaPrimary, ctaGhost, animated = false } = Astro.props;
 ---
 <section class="hero">
   {animated && <AuroraBackground client:load />}
   <div class="container hero-inner">
     {eyebrow && <p class="hero-eyebrow">{eyebrow}</p>}
-    <h1 class="hero-title">{title}</h1>
+    <h1 class="hero-title">{title}{titleAccent && <> <span class="text-gradient">{titleAccent}</span></>}</h1>
     {subtitle && <p class="hero-sub">{subtitle}</p>}
     {(ctaPrimary || ctaGhost) && (
       <div class="hero-cta">

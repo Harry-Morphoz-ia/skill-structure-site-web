@@ -30,6 +30,26 @@ Chargées automatiquement dès qu'une feuille de style d'un site du kit est édi
 - Images fluides : `max-width: 100%` + `object-fit: cover` + `aspect-ratio`.
 - Interdit : un élément qui crée un défilement horizontal sur mobile.
 
+## Langage visuel actuel : jamais un rendu « WordPress »
+
+Le kit fournit des blocs modernes prêts à l'emploi. **Tout site en utilise au moins deux**
+(sauf brief très sobre explicite), pour ne jamais ressembler à un thème corporate daté :
+
+- `.text-gradient` : un mot ou groupe de mots clé en dégradé de marque (hero via la prop
+  `titleAccent`, ou un titre de section). Un par page suffit, pas partout.
+- `.section-dark` : bande sombre à fort impact (chiffres, CTA final) avec halo dérivé
+  de la palette.
+- `<Stats items={...} />` : chiffres clés avec compteurs animés (chiffres RÉELS du brief
+  uniquement, jamais inventés).
+- `.card-glass` : cartes en verre dépoli sur fond sombre ou sur image.
+- `.bento` + `.bento-lg` : grille asymétrique avec un bloc vedette (réalisations, offres).
+- Hero : halos lumineux + trame fine automatiques (aux couleurs du site), pastille
+  `eyebrow` au-dessus du titre.
+
+**Garde-fou** : tous ces effets se dérivent des tokens (`--gradient`, `color-mix` sur
+`--c-primary`). Le dégradé violet/rose générique « IA » reste interdit : si la palette du
+client est verte, les halos et dégradés sont verts.
+
 ## Animations : un site vivant par défaut
 
 - **Un site du kit n'est jamais figé.** Le minimum sur tout site (déjà intégré au template,
