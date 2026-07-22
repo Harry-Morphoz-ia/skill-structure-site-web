@@ -20,6 +20,20 @@ Optimization) consiste à maximiser les chances que ce soit **ton** site.
 Lance **`/site-geo`** après `/site-seo` : le skill enrichit le llms.txt, construit ta FAQ
 à partir des vraies questions de tes clients, et rend ton contenu « citable ».
 
+## Est-ce que ça change mon site visuellement ?
+
+Quasiment pas : le GEO travaille en coulisses.
+
+| Élément | Visible par tes visiteurs ? |
+|---|---|
+| llms.txt | Non (fichier à part, lu par les IA) |
+| Robots IA (robots.txt) | Non |
+| Données structurées FAQPage | Non (code invisible) |
+| **La FAQ** | **Oui, si tu l'actives** : une section questions/réponses, utile aussi à tes visiteurs (elle rassure et répond aux objections). Optionnelle, tu choisis de l'ajouter ou non. |
+| Reformulations « citables » | Parfois : le skill peut proposer d'ajuster une phrase de l'accueil (ex : « [Nom] est [métier] à [ville] »). Toujours proposé, jamais imposé. |
+
+Le skill ne touche jamais au design, aux couleurs, à la structure des pages ni au menu.
+
 ## Les attentes, honnêtement
 
 Le GEO est un domaine **jeune** : les pratiques évoluent vite et personne ne peut garantir
