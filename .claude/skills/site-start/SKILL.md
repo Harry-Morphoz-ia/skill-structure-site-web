@@ -42,8 +42,12 @@ Regrouper par 2 à 4 max pour ne pas noyer la personne.
    *Pourquoi : ça détermine la structure des pages et le type de conversion.*
 2. **La société** : quel métier, quel secteur, quelle taille ? En une phrase, que fait-elle ?
    *Pourquoi : le ton et le vocabulaire du site en dépendent.*
-3. **Objectif principal** : quelle action UNIQUE le visiteur doit faire ? (appeler · demander un devis · réserver · acheter · s'inscrire à une newsletter)
+3. **Objectif principal** : quelle action UNIQUE le visiteur doit faire ?
    *Pourquoi : c'est le cœur de la conversion. Tout le site doit pousser vers cette action.*
+   **Les objectifs proposés doivent être cohérents avec la nature choisie en Q1 :**
+   - Vitrine / Landing / Portfolio → demander un devis · prendre RDV ou réserver · appeler · remplir le formulaire de contact. **Jamais « acheter en ligne »** (sinon c'est un e-commerce).
+   - E-commerce → acheter un produit · s'inscrire à la newsletter · créer un compte.
+   Si l'objectif « acheter » est voulu alors que la nature est « vitrine », signaler la contradiction et reproposer soit un objectif sans achat, soit de repasser en e-commerce.
 4. **Cible** : qui sont les visiteurs ? (particuliers, entreprises, tranche d'âge, zone géographique)
    *Pourquoi : on n'écrit pas pareil pour un mariage haut de gamme ou une PME du bâtiment.*
 5. **Concurrents / références** : 1 à 3 sites (concurrents ou juste des sites qu'il aime) + ce qui plaît dessus.
