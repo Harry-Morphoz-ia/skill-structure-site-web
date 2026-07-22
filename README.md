@@ -42,12 +42,25 @@ kit-site-web/
 
 ---
 
-## Le workflow (une fois le kit terminé)
+## Le principe : des skills qui posent les bonnes questions
+
+Le kit n'est pas un template figé. C'est une **méthode guidée** : la personne lance `/site-start`,
+le kit lui pose les bonnes questions (type de site, société, objectif, palette, style, animations),
+et il en déduit le site. Le template n'est que le point d'arrivée que ces skills remplissent.
 
 ```
-/site-cadrer  →  /site-style  →  /site-construire  →  /site-seo  →  /site-animer  →  /site-verifier  →  livraison Hostinger
-   brief         palette+typo      HTML responsive      référencement   animations      contrôle qualité
+/site-start   →   /site-style   →   /site-construire   →   /site-seo   →   /site-verifier   →   livraison
+ questionnaire     palette+typo       génère le site        référencement    contrôle qualité
+ cadrage+design    +contraste         Astro + animations
 ```
+
+## Stack cible des sites
+
+**Astro** (validé le 22/07/2026) : produit du HTML statique rapide, publiable sur Hostinger,
+mais permet d'injecter des composants animés React là où il faut un effet fort.
+
+- **Animations 21st.dev** : connecteur officiel « Magic MCP » + clé API → génération à la demande.
+- **Animations Aceternity UI** : composants React piochés et intégrés en îlots Astro (Pro 199 $ optionnel).
 
 ---
 
@@ -56,14 +69,16 @@ kit-site-web/
 | Phase | Objet | État |
 |-------|-------|------|
 | 0 | Fondations git + structure du kit | ✅ fait |
-| 1 | Squelette de site (template zéro-config) | ✅ fait |
-| 2 | Règles webmaster auto-chargées (Hn, typo, boutons, contraste, images) | ⬜ |
-| 3 | Skills de méthode (`/site-cadrer`, `/site-style`, `/site-construire`) | ⬜ |
-| 4 | SEO Google (meta, sitemap, JSON-LD) | ⬜ |
-| 5 | Animations non-génériques | ⬜ |
-| 6 | Vérification automatique (Playwright + contraste + Lighthouse) | ⬜ |
-| 7 | Migration des sites existants (morphoz-ia, elie-chouraqui, france-prestige) | ⬜ |
-| 8 | Documentation finale | ⬜ |
+| 1 | Squelette de base HTML/CSS (sert de base au template Astro) | ✅ fait |
+| 2 | Skill `/site-start` : questionnaire de cadrage (business + design) | 🟡 en cours |
+| 3 | Skill `/site-style` : palette + typo + test de contraste + choix animations | ⬜ |
+| 4 | Passage du template en Astro + connecteurs d'animations (21st.dev / Aceternity) | ⬜ |
+| 5 | Skill `/site-construire` : génère le site Astro depuis brief + tokens | ⬜ |
+| 6 | Règles webmaster auto-chargées (Hn, typo, boutons, contraste, images) | ⬜ |
+| 7 | SEO Google (meta, sitemap, JSON-LD) | ⬜ |
+| 8 | Vérification automatique (Playwright + contraste + Lighthouse) | ⬜ |
+| 9 | Migration des sites existants (morphoz-ia, elie-chouraqui, france-prestige) | ⬜ |
+| 10 | Documentation finale | ⬜ |
 
 **Option remise à plus tard :** référencement sur les IA (llms.txt + données structurées enrichies
 pour être cité par ChatGPT / Claude). À intégrer après le SEO Google classique.
