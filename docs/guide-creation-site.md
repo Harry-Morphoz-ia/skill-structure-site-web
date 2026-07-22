@@ -73,6 +73,19 @@ par page, un titre et une description uniques par page, le mot-clé placé natur
 (jamais de bourrage), la « carte d'identité » Google (données structurées) remplie, le
 sitemap activé.
 
+**Tu n'as pas besoin de connaître les « balises »** : pour chaque page, le kit te montre un
+aperçu de ce que les gens verront dans Google et te le fait valider avant de l'appliquer :
+
+```
+🔵 Traiteur mariage à Melun · TonEntreprise      ← le lien bleu cliquable (le « titre »)
+🟢 https://ton-site.fr › services                 ← l'adresse
+   Recevez vos invités sans stress. Devis         ← le texte sous le lien
+   gratuit sous 24h.                                 (la « description »)
+```
+
+Pour le modifier plus tard : demande simplement (« change le titre Google de ma page
+contact »), le kit te remontre l'aperçu avant d'appliquer.
+
 **Ce que tu obtiens** : un site que Google comprend, avec un tableau mot-clé ↔ page.
 
 ### Étape 5 : `/site-verifier` (le contrôle qualité)

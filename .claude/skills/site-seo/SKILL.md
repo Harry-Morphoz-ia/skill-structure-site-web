@@ -40,14 +40,31 @@ Construire le tableau mot-clé ↔ page :
 - **À propos / Contact** → requêtes de marque et locales
 Le noter dans `design-tokens.md` ou en tête de chaque page (commentaire).
 
-### Étape 3 — Balises par page (props du BaseLayout)
+### Étape 3 — Balises par page (props du BaseLayout), AVEC aperçu validé
 
-Pour chaque page, écrire dans `<BaseLayout title="..." description="...">` :
+Pour chaque page, rédiger :
 - **title** : unique, ≤ 60 caractères, mot-clé + ville + marque
   (ex : « Traiteur mariage à Melun · NomSociété »)
 - **description** : ~150 caractères, le bénéfice + un appel à l'action
   (« Recevez vos invités sans stress. Devis gratuit sous 24h. »). C'est le texte de
   l'annonce dans Google : il doit donner envie de cliquer.
+
+**Obligatoire : montrer l'aperçu « comme sur Google » AVANT d'écrire.** L'utilisateur ne
+connaît pas les balises ; il comprend un résultat de recherche. Présenter chaque page ainsi
+et faire valider (ou corriger) :
+
+```
+🔵 Traiteur mariage à Melun · NomSociété
+🟢 https://www.exemple.com › services
+   Recevez vos invités sans stress : menus sur mesure, service en salle.
+   Devis gratuit sous 24h.
+```
+
+(ligne 1 = le lien bleu cliquable, ligne 2 = l'adresse, lignes suivantes = le texte sous le
+lien). Une fois validé, écrire dans `<BaseLayout title="..." description="...">` de chaque page.
+
+**Modification après coup** : l'utilisateur demande en langage naturel (« change le titre
+Google de la page contact ») ; on repasse par cet aperçu avant d'appliquer.
 
 ### Étape 4 — Optimiser le contenu de chaque page
 
