@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Renseigner l URL du sitemap une fois le domaine connu :
+# Sitemap: https://www.exemple.com/sitemap-index.xml

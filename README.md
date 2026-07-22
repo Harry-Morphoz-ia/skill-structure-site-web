@@ -29,9 +29,16 @@ Le kit n'est pas un template figé : c'est une **méthode qui pose les bonnes qu
 kit-site-web/
 ├── README.md            ← ce fichier
 ├── CLAUDE.md            ← contexte pour l'assistant IA quand il travaille dans le kit
-├── template/            ← le squelette de site à copier pour démarrer (zéro-config)
-│   ├── index.html
-│   └── assets/ (css, js, images/hero, images/galerie, videos)
+├── template/            ← projet Astro à copier pour démarrer un site
+│   ├── package.json  astro.config.mjs
+│   ├── src/
+│   │   ├── config/site.js      ← nom, coordonnées, réseaux (à remplir une fois)
+│   │   ├── styles/global.css   ← les design tokens (palette, typo)
+│   │   ├── layouts/            ← squelette de page commun (SEO, en-tête, pied de page)
+│   │   ├── components/         ← en-tête, pied de page, hero, cartes, formulaire, réseaux
+│   │   └── pages/              ← une page = une route (index, services, a-propos, contact)
+│   └── public/assets/          ← images (hero, galerie), vidéos, robots.txt
+├── tools/contrast.mjs   ← test de lisibilité WCAG (utilisé par /site-style)
 ├── .claude/
 │   ├── skills/          ← les commandes /site-start, /site-style, /site-construire…
 │   └── rules/           ← bonnes pratiques webmaster auto-chargées sur les fichiers HTML/CSS
@@ -57,6 +64,18 @@ cp -r .claude/skills/* <ton-projet>/.claude/skills/
 ```
 
 Puis lance `/site-start` pour cadrer ton premier site.
+
+### Lancer un site (template Astro)
+
+```bash
+cp -r template ../mon-site && cd ../mon-site
+npm install        # une seule fois
+npm run dev        # aperçu local sur http://localhost:4321
+npm run build      # génère dist/ : les fichiers statiques à mettre en ligne
+```
+
+Pour publier : envoyer le contenu de `dist/` sur l'hébergement (Hostinger, Netlify, Vercel…),
+ou brancher un déploiement automatique.
 
 ---
 
@@ -87,7 +106,7 @@ animés React là où il faut un effet fort.
 | 1 | Squelette de base HTML/CSS (sert de base au template Astro) | ✅ fait |
 | 2 | Skill `/site-start` : cahier des charges webmaster complet | ✅ fait |
 | 3 | Skill `/site-style` : palette + typo + test de contraste + choix animations | ✅ fait |
-| 4 | Passage du template en Astro + connecteurs d'animations (21st.dev / Aceternity) | ⬜ |
+| 4 | Passage du template en Astro (multi-pages) ✅ + connecteurs d'animations 21st.dev / Aceternity ⬜ | 🟡 en cours |
 | 5 | Skill `/site-construire` : génère le site Astro depuis brief + tokens | ⬜ |
 | 6 | Règles webmaster auto-chargées (Hn, typo, boutons, contraste, images) | ⬜ |
 | 7 | SEO (meta, sitemap, JSON-LD) | ⬜ |

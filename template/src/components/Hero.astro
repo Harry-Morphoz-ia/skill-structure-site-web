@@ -1,0 +1,17 @@
+---
+// Section d'accueil. Un seul <h1> par page : à n'utiliser qu'une fois.
+// Fond sombre + hero.jpg (déposé dans public/assets/images/hero/).
+const { title, subtitle, ctaPrimary, ctaGhost } = Astro.props;
+---
+<section class="hero">
+  <div class="container hero-inner">
+    <h1 class="hero-title">{title}</h1>
+    {subtitle && <p class="hero-sub">{subtitle}</p>}
+    {(ctaPrimary || ctaGhost) && (
+      <div class="hero-cta">
+        {ctaPrimary && <a href={ctaPrimary.href} class="btn btn-primary">{ctaPrimary.label}</a>}
+        {ctaGhost && <a href={ctaGhost.href} class="btn btn-ghost">{ctaGhost.label}</a>}
+      </div>
+    )}
+  </div>
+</section>

@@ -1,0 +1,23 @@
+---
+// PAGE CONTACT (porte l'objectif de conversion : formulaire + coordonnées)
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ContactForm from '../components/ContactForm.astro';
+import { site } from '../config/site.js';
+---
+<BaseLayout title="Contact" description="Contactez-nous ou prenez rendez-vous." current="/contact">
+  <section class="section">
+    <div class="container split">
+      <div class="split-text">
+        <h1 class="section-title">Contact</h1>
+        <p>Un mot d'accroche pour inviter à écrire, appeler ou prendre rendez-vous.</p>
+        <ul class="contact-list">
+          <li><strong>Téléphone</strong> : {site.phone}</li>
+          <li><strong>Email</strong> : {site.email}</li>
+          <li><strong>Adresse</strong> : {site.address}</li>
+          <li><strong>Zone</strong> : {site.area}</li>
+        </ul>
+      </div>
+      <ContactForm />
+    </div>
+  </section>
+</BaseLayout>

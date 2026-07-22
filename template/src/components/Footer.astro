@@ -1,0 +1,16 @@
+---
+import { site } from '../config/site.js';
+import Socials from './Socials.astro';
+---
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <span class="logo">{site.name}</span>
+    <Socials />
+    <p class="footer-meta">© <span id="annee"></span> {site.name}. Tous droits réservés.</p>
+  </div>
+</footer>
+
+<script>
+  const annee = document.getElementById('annee');
+  if (annee) annee.textContent = String(new Date().getFullYear());
+</script>

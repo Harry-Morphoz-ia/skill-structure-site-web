@@ -1,0 +1,40 @@
+---
+// En-tête + navigation (menu burger sur mobile, horizontal sur desktop).
+// La prop `current` sert à surligner la page active.
+import { site } from '../config/site.js';
+const { current = '' } = Astro.props;
+---
+<header class="site-header" id="haut">
+  <div class="container header-inner">
+    <a href="/" class="logo">{site.name}</a>
+
+    <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="nav" id="menu">
+      {site.nav.map((item) => (
+        <a href={item.href} aria-current={current === item.href ? 'page' : undefined}>{item.label}</a>
+      ))}
+      <a href={site.cta.href} class="btn btn-primary btn-nav">{site.cta.label}</a>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const burger = document.querySelector('.burger');
+  const nav = document.getElementById('menu');
+  if (burger && nav) {
+    burger.addEventListener('click', () => {
+      const open = nav.classList.toggle('open');
+      burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+      burger.setAttribute('aria-label', open ? 'Fermer le menu' : 'Ouvrir le menu');
+    });
+    nav.querySelectorAll('a').forEach((lien) => {
+      lien.addEventListener('click', () => {
+        nav.classList.remove('open');
+        burger.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+</script>

@@ -1,5 +1,5 @@
 /* ================================================================
-   TEMPLATE — feuille de style
+   FEUILLE DE STYLE GLOBALE
    Tout le style passe par les "design tokens" ci-dessous (les :root).
    Pour re-styler un site : /site-style ne change QUE ces variables.
    Approche mobile-first : le CSS de base = mobile, les @media agrandissent.
@@ -78,7 +78,8 @@ h1, h2, h3 { font-family: var(--font-title); line-height: 1.15; font-weight: 700
 }
 .btn:hover { transform: translateY(-2px); }
 .btn-primary { background: var(--c-primary); color: var(--c-on-primary); }
-.btn-primary:hover { box-shadow: 0 10px 24px rgba(123, 47, 255, 0.3); }
+/* Ombre dérivée de la palette (s'adapte à la couleur primary du site) */
+.btn-primary:hover { box-shadow: 0 10px 24px color-mix(in srgb, var(--c-primary) 30%, transparent); }
 .btn-ghost { background: transparent; color: var(--c-text); border-color: var(--c-border); }
 .btn-ghost:hover { border-color: var(--c-primary); color: var(--c-primary); }
 .btn-block { width: 100%; }
@@ -104,7 +105,8 @@ h1, h2, h3 { font-family: var(--font-title); line-height: 1.15; font-weight: 700
 }
 .nav.open { transform: translateY(0); }
 .nav a { padding: 1rem var(--space); border-top: 1px solid var(--c-border); }
-.nav a.btn-nav { margin: 1rem var(--space); border: none; padding: 0.85rem 1.6rem; }
+.nav a[aria-current="page"] { color: var(--c-primary); font-weight: 600; }
+.nav a.btn-nav { margin: 1rem var(--space); border: none; padding: 0.85rem 1.6rem; color: var(--c-on-primary); }
 
 .burger { display: inline-flex; flex-direction: column; gap: 5px; background: none; border: 0; cursor: pointer; padding: 0.5rem; }
 .burger span { width: 26px; height: 2px; background: var(--c-text); transition: var(--transition); }
@@ -118,11 +120,10 @@ h1, h2, h3 { font-family: var(--font-title); line-height: 1.15; font-weight: 700
 .hero {
   position: relative;
   display: grid; align-items: center; min-height: 78vh;
-  /* Fond TOUJOURS sombre : voile sombre + hero.jpg (si déposé) par-dessus une
-     couleur de secours sombre. Sans image, seul le voile + le fond sombre restent.
-     Résultat : texte blanc lisible dans les deux cas. */
+  /* Fond TOUJOURS sombre : voile sombre + hero.jpg (si déposé). Sans image,
+     seul le voile + le fond sombre restent. Texte blanc lisible dans les 2 cas. */
   background-color: var(--c-bg-dark, #08090E);
-  background-image: linear-gradient(rgba(8,9,14,0.55), rgba(8,9,14,0.55)), url('../images/hero/hero.jpg');
+  background-image: linear-gradient(rgba(8,9,14,0.55), rgba(8,9,14,0.55)), url('/assets/images/hero/hero.jpg');
   background-size: cover; background-position: center;
   overflow: hidden;
 }

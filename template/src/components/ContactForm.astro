@@ -1,0 +1,12 @@
+---
+// Formulaire de contact. `action` = URL du service qui reçoit les messages
+// (Formspree, webhook n8n, Brevo...). À renseigner par /site-construire.
+const { action = 'REMPLACER_PAR_URL_FORMSPREE_OU_N8N' } = Astro.props;
+---
+<form class="contact-form" action={action} method="POST">
+  <label>Nom <input type="text" name="nom" required /></label>
+  <label>Email <input type="email" name="email" required /></label>
+  <label>Téléphone <input type="tel" name="telephone" /></label>
+  <label>Message <textarea name="message" rows="4" required></textarea></label>
+  <button type="submit" class="btn btn-primary btn-block">Envoyer</button>
+</form>

@@ -1,0 +1,15 @@
+# Dépendances
+node_modules/
+
+# Build Astro
+dist/
+.astro/
+
+# Système / éditeurs
+.DS_Store
+Thumbs.db
+.vscode/
+
+# Secrets
+.env
+.env.*

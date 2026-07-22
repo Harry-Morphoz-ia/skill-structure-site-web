@@ -1,0 +1,22 @@
+---
+// PAGE SERVICES (exemple de page de vitrine multi-pages)
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Card from '../components/Card.astro';
+import { site } from '../config/site.js';
+---
+<BaseLayout title="Services" description="Nos prestations en détail." current="/services">
+  <section class="section">
+    <div class="container">
+      <h1 class="section-title">Nos services</h1>
+      <p class="section-lead">Présentez ici chaque prestation, avec un bénéfice clair et un appel à l'action.</p>
+      <div class="grid grid-3">
+        <Card num="01" title="Premier service">Ce que ça apporte, pour qui, et le résultat attendu.</Card>
+        <Card num="02" title="Deuxième service">Ce que ça apporte, pour qui, et le résultat attendu.</Card>
+        <Card num="03" title="Troisième service">Ce que ça apporte, pour qui, et le résultat attendu.</Card>
+      </div>
+      <p style="margin-top:2.5rem">
+        <a href={site.cta.href} class="btn btn-primary">{site.cta.label}</a>
+      </p>
+    </div>
+  </section>
+</BaseLayout>

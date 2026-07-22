@@ -1,0 +1,11 @@
+---
+// Emplacement image. Tant que le fichier n'est pas déposé dans
+// public/assets/images/, un cadre "Déposez ..." s'affiche (au lieu d'une image cassée).
+// file : chemin relatif à /assets/images/ (ex : "galerie/01.jpg" ou "hero/hero.jpg")
+const { file, alt = '', class: className = 'tile' } = Astro.props;
+const src = `/assets/images/${file}`;
+---
+<figure class={className} data-media="image" data-file={file}>
+  <img src={src} alt={alt} loading="lazy"
+       onerror="this.closest('[data-media]').classList.add('media-empty')" />
+</figure>

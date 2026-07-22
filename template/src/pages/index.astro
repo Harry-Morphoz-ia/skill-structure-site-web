@@ -1,0 +1,53 @@
+---
+// PAGE ACCUEIL
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import Card from '../components/Card.astro';
+import MediaBox from '../components/MediaBox.astro';
+import { site } from '../config/site.js';
+---
+<BaseLayout current="/">
+  <Hero
+    title="La promesse principale du site, en une phrase forte."
+    subtitle="Le sous-titre qui précise pour qui, et pourquoi c'est différent. Une à deux lignes."
+    ctaPrimary={site.cta}
+    ctaGhost={{ label: 'En savoir plus', href: '/services' }}
+  />
+
+  <!-- Services / atouts -->
+  <section class="section" id="services">
+    <div class="container">
+      <h2 class="section-title">Ce que nous proposons</h2>
+      <p class="section-lead">Une phrase d'introduction sous le titre de section.</p>
+      <div class="grid grid-3">
+        <Card num="01" title="Premier service">Bénéfice concret pour le client, pas la fonctionnalité.</Card>
+        <Card num="02" title="Deuxième service">Bénéfice concret pour le client, pas la fonctionnalité.</Card>
+        <Card num="03" title="Troisième service">Bénéfice concret pour le client, pas la fonctionnalité.</Card>
+      </div>
+    </div>
+  </section>
+
+  <!-- À propos (aperçu) -->
+  <section class="section section-alt">
+    <div class="container split">
+      <div class="split-text">
+        <h2 class="section-title">À propos</h2>
+        <p>Paragraphe qui raconte l'histoire, l'expertise ou la valeur. Rester concret.</p>
+        <a href="/a-propos" class="btn btn-primary">Découvrir</a>
+      </div>
+      <MediaBox file="galerie/apropos.jpg" alt="Décrire l'image" class="split-media" />
+    </div>
+  </section>
+
+  <!-- Réalisations -->
+  <section class="section" id="galerie">
+    <div class="container">
+      <h2 class="section-title">Nos réalisations</h2>
+      <div class="grid grid-3">
+        <MediaBox file="galerie/01.jpg" alt="Décrire la réalisation" />
+        <MediaBox file="galerie/02.jpg" alt="Décrire la réalisation" />
+        <MediaBox file="galerie/03.jpg" alt="Décrire la réalisation" />
+      </div>
+    </div>
+  </section>
+</BaseLayout>

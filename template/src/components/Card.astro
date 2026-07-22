@@ -1,0 +1,9 @@
+---
+// Carte de service / atout. Le texte passe en contenu (slot).
+const { num, title } = Astro.props;
+---
+<article class="card">
+  {num && <div class="card-icon" aria-hidden="true">{num}</div>}
+  <h3>{title}</h3>
+  <p><slot /></p>
+</article>

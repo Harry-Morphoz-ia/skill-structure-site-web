@@ -1,0 +1,19 @@
+---
+// PAGE À PROPOS (exemple de page de vitrine multi-pages)
+import BaseLayout from '../layouts/BaseLayout.astro';
+import MediaBox from '../components/MediaBox.astro';
+import { site } from '../config/site.js';
+---
+<BaseLayout title="À propos" description="Notre histoire et nos valeurs." current="/a-propos">
+  <section class="section">
+    <div class="container split">
+      <div class="split-text">
+        <h1 class="section-title">À propos</h1>
+        <p>Racontez l'histoire de la société, son expertise, ce qui la rend différente. Restez concret et humain.</p>
+        <p>Un deuxième paragraphe pour la preuve : ancienneté, nombre de clients, valeurs.</p>
+        <a href={site.cta.href} class="btn btn-primary">{site.cta.label}</a>
+      </div>
+      <MediaBox file="galerie/apropos.jpg" alt="Décrire l'image" class="split-media" />
+    </div>
+  </section>
+</BaseLayout>

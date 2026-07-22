@@ -1,0 +1,14 @@
+{
+  "name": "site-template",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Template de site (kit site web) — Astro, statique, multi-pages",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "astro": "^5.0.0"
+  }
+}
