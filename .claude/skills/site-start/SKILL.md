@@ -1,112 +1,200 @@
 ---
 name: site-start
-description: Point d'entrée du kit de création de sites web Morphoz. Pose les bonnes questions de cadrage (type de site, société, objectif de conversion, cible, palette existante, style, animations, contenus) et écrit un brief.md dans le dossier du site. Route ensuite vers /site-style. Utiliser au tout début d'un nouveau site. Ne PAS utiliser pour un site déjà cadré (éditer le brief.md directement) ni pour une app (c'est /start du kit apps).
+description: Point d'entrée du kit de création de sites web Morphoz. Mène un cahier des charges complet comme un vrai webmaster (entreprise, objectif de conversion, structure, contenus, réseaux sociaux, identité visuelle, médias, fonctionnalités, SEO local, légal, animations) et écrit un brief.md riche dans le dossier du site. Route ensuite vers /site-style. Utiliser au tout début d'un nouveau site. Ne PAS utiliser pour un site déjà cadré (éditer le brief.md) ni pour une app (c'est /start du kit apps).
 ---
 
-# Skill /site-start — cadrage guidé d'un nouveau site
+# Skill /site-start — cahier des charges guidé d'un nouveau site
 
 ## Pour quoi faire
 
-C'est la première chose qu'on lance pour un nouveau site. Le skill joue le rôle d'un chef de projet
-web : il pose les bonnes questions, une par une, et transforme les réponses en un **brief.md** clair
-qui pilotera toute la fabrication du site. Rien n'est construit ici : on décide, on écrit le cahier
-des charges.
+Première chose lancée pour un nouveau site. Le skill joue le rôle d'un chef de projet web
+expérimenté : il pose, section par section, toutes les questions qu'un vrai webmaster pose avant
+de construire, et transforme les réponses en un **brief.md complet** qui pilotera toute la
+fabrication. Rien n'est construit ici : on collecte le maximum d'informations utiles.
 
 Sortie : `site-[nom-client]/brief.md` rempli + suggestion de lancer `/site-style`.
 
-## Règle d'or
+## Règles d'or
 
-**Une question à la fois, en langage simple.** L'utilisateur (Harry ou un collaborateur) n'est pas
-technique. On explique toujours pourquoi on pose la question. On ne bloque jamais : si une réponse
-manque, on note « à définir » dans le brief et on continue. Jamais de tiret cadratin ( — ) dans le
-brief produit.
+1. **Par sections, pas en vrac.** Annoncer chaque section, poser ses questions groupées (2 à 4),
+   expliquer brièvement le pourquoi. L'utilisateur n'est pas technique.
+2. **Ne jamais bloquer.** Si une réponse manque, écrire « à définir » dans le brief et continuer.
+   Toujours proposer « je ne sais pas encore / on verra plus tard ».
+3. **Cohérence.** Les options proposées s'adaptent aux réponses précédentes (voir Section B).
+4. **Choix fermés via l'outil de questions interactives ; infos factuelles (coordonnées, liens,
+   mots-clés) en texte libre.**
+5. Jamais de tiret cadratin ( — ) dans le brief produit.
 
 ## Comment procéder
 
 ### Étape 1 — Créer le dossier du site
 
-Demander le nom du client, puis créer le dossier depuis le template :
+Demander le nom du client, puis :
 
 ```bash
 cp -r kit-site-web/template "Site web/site-[nom-kebab]"
 ```
 
-Le dossier `site-[nom-kebab]/` contient déjà la structure (index, assets, notices médias).
+### Étape 2 — Le questionnaire (10 sections)
 
-### Étape 2 — Les 6 questions de cadrage (business)
+Dérouler les sections dans l'ordre. Pour chaque section : une phrase d'intro, puis les questions.
 
-Poser ces questions via l'outil de questions interactives (choix fermés) ou en conversation.
-Regrouper par 2 à 4 max pour ne pas noyer la personne.
+---
 
-1. **Nature du site** : vitrine · landing page (une seule action) · e-commerce · portfolio · prise de rendez-vous · autre ?
-   *Pourquoi : ça détermine la structure des pages et le type de conversion.*
-2. **La société** : quel métier, quel secteur, quelle taille ? En une phrase, que fait-elle ?
-   *Pourquoi : le ton et le vocabulaire du site en dépendent.*
-3. **Objectif principal** : quelle action UNIQUE le visiteur doit faire ?
-   *Pourquoi : c'est le cœur de la conversion. Tout le site doit pousser vers cette action.*
-   **Les objectifs proposés doivent être cohérents avec la nature choisie en Q1 :**
-   - Vitrine / Landing / Portfolio → demander un devis · prendre RDV ou réserver · appeler · remplir le formulaire de contact. **Jamais « acheter en ligne »** (sinon c'est un e-commerce).
-   - E-commerce → acheter un produit · s'inscrire à la newsletter · créer un compte.
-   Si l'objectif « acheter » est voulu alors que la nature est « vitrine », signaler la contradiction et reproposer soit un objectif sans achat, soit de repasser en e-commerce.
-4. **Cible** : qui sont les visiteurs ? (particuliers, entreprises, tranche d'âge, zone géographique)
-   *Pourquoi : on n'écrit pas pareil pour un mariage haut de gamme ou une PME du bâtiment.*
-5. **Concurrents / références** : 1 à 3 sites (concurrents ou juste des sites qu'il aime) + ce qui plaît dessus.
-   *Pourquoi : ça cadre le niveau d'exigence visuel et évite le « site standard ».*
-6. **Contenus disponibles** : a-t-il les textes ? des photos ? une vidéo ? un logo ?
-   *Pourquoi : ça dit ce qu'on doit produire vs ce qu'on a déjà.*
+**Section A — L'entreprise**
+- Que fait la société en une phrase ? (métier, secteur)
+- Coordonnées : téléphone, email, adresse physique, zone d'intervention
+- Horaires d'ouverture (si pertinent)
+- Ancienneté / chiffres de réassurance (année de création, nombre de clients, avis Google)
+*Pourquoi : ces infos alimentent le footer, la page contact, les mentions de réassurance et le SEO local.*
 
-### Étape 3 — Les 3 questions de design (identité visuelle)
+**Section B — Objectif & audience**
+- Nature du site : vitrine · landing page · e-commerce · portfolio · prise de RDV *(choix fermé)*
+- Objectif principal de conversion *(choix fermé, COHÉRENT avec la nature)* :
+  - Vitrine / Landing / Portfolio → demander un devis · prendre RDV/réserver · appeler · formulaire de contact. **Jamais « acheter en ligne »** (sinon e-commerce).
+  - E-commerce → acheter · s'inscrire newsletter · créer un compte.
+- Objectifs secondaires éventuels
+- Cible / persona : qui sont les visiteurs (particuliers/entreprises, âge, zone, profil) ?
+- Proposition de valeur unique : qu'est-ce qui vous différencie des concurrents ?
+*Pourquoi : tout le site doit pousser vers l'objectif principal ; la cible fixe le ton.*
 
-7. **Palette de couleurs** : « Avez-vous déjà des couleurs de marque ? Si oui, lesquelles (codes ou description) ? Sinon je proposerai une palette. »
-   *On note les couleurs exactes si fournies. Le test de contraste se fera dans /site-style.*
-8. **Style / ambiance** : sobre & pro · luxe & élégant · moderne & tech · chaleureux & humain · minimaliste · audacieux ?
-   *Pourquoi : c'est ce qui oriente typo, espacements et intensité des animations.*
-9. **Niveau d'animation** : sites très animés (effets « wow » type 21st.dev / Aceternity) · animations discrètes · quasi statique ?
-   *Pourquoi : ça décide si on active les connecteurs d'animations React dans /site-style, et donc la complexité du site.*
+**Section C — Structure & contenu**
+- Quelles sections/pages ? (accueil, services, à propos, réalisations/galerie, tarifs, FAQ, avis clients, blog, contact) *(choix multiple)*
+- Liste des services/prestations à présenter
+- Témoignages / avis clients disponibles ?
+- Équipe à présenter (photos, rôles) ?
+- Labels, certifications, partenaires, logos clients à afficher ?
+*Pourquoi : ça définit l'arborescence et les blocs à construire.*
 
-### Étape 4 — Écrire le brief.md
+**Section D — Réseaux sociaux**
+- Sur quels réseaux la société est-elle présente, et quel est le lien de chacun ?
+  Instagram, LinkedIn, TikTok, YouTube, Facebook, X/Twitter, Pinterest, WhatsApp, autre.
+- Ces icônes seront **cliquables, ouvertes dans un nouvel onglet**, et **s'adapteront automatiquement
+  à la couleur de la palette** (icônes SVG monochromes en `currentColor`, jamais des logos multicolores
+  figés). Placées dans le header et/ou le footer.
+*Pourquoi : présence sociale = réassurance + trafic ; l'adaptation couleur garde une identité cohérente.*
 
-Créer `site-[nom-kebab]/brief.md` avec cette trame (remplir avec les réponses, « à définir » si manquant) :
+**Section E — Identité visuelle**
+- Palette : déjà des couleurs de marque · extraire du logo · à créer *(choix fermé)*
+- Logo disponible (fichier vectoriel de préférence) ?
+- Style / ambiance : sobre & pro · moderne & tech · luxe & élégant · chaleureux & humain *(choix fermé)*
+- Typographie souhaitée ou imposée par la charte ?
+- Sites de référence / inspirations (1 à 3) et ce qui plaît dessus
+*Pourquoi : oriente palette, typo, intensité visuelle ; évite le « site standard ».*
+
+**Section F — Médias**
+- Photos : professionnelles dispo · à shooter · banque d'images à prévoir ?
+- Vidéo (présentation, fond, témoignage) ?
+- Illustrations / pictos spécifiques ?
+*Pourquoi : dit ce qu'on a vs ce qu'on doit produire, et le poids à optimiser.*
+
+**Section G — Fonctionnalités & conversion**
+- Formulaire de contact : quels champs (nom, email, téléphone, message, autre) ? Où arrivent les messages (email, Brevo, webhook n8n, Formspree) ?
+- Prise de RDV : outil externe (Calendly, Google Agenda) ou simple demande ?
+- Newsletter (Brevo) ?
+- Bouton WhatsApp / chat ?
+- Carte Google Maps (adresse) ?
+- Bouton d'appel flottant sur mobile ?
+*Pourquoi : ce sont les mécaniques qui transforment un visiteur en contact.*
+
+**Section H — SEO & référencement**
+- Mots-clés / expressions que les clients tapent sur Google
+- Zone géographique à cibler (SEO local : ville, département)
+- Fiche Google Business Profile existante ?
+- Concurrents à surveiller
+*Pourquoi : cadre les titres, textes et données structurées pour être trouvé.*
+
+**Section I — Légal & technique**
+- Nom de domaine : déjà acheté ? souhaité ?
+- Hébergement (Hostinger par défaut Morphoz)
+- Multilingue ? Si oui, quelles langues ?
+- Mentions légales, politique de confidentialité, bandeau cookies (RGPD) à prévoir ?
+- Suivi d'audience (Google Analytics / autre) ?
+*Pourquoi : obligations légales + base technique de mise en ligne.*
+
+**Section J — Animations**
+- Niveau d'animation : très animé (effet wow) · discrètes · quasi statique *(choix fermé)*
+- « Très animé » → on activera les connecteurs React 21st.dev (Magic MCP) et/ou Aceternity dans /site-style.
+*Pourquoi : décide de la richesse visuelle et de la complexité de fabrication.*
+
+### Étape 3 — Écrire le brief.md
+
+Créer `site-[nom-kebab]/brief.md` avec la trame ci-dessous (remplir, « à définir » si manquant) :
 
 ```markdown
 # Brief — [Nom client]
 
-## Identité
-- Société :
-- Secteur :
-- Site : morphoz.io / URL client
-- Date de cadrage :
+## A. Entreprise
+- Activité (1 phrase) :
+- Téléphone : / Email : / Adresse :
+- Zone d'intervention :
+- Horaires :
+- Réassurance (ancienneté, nb clients, avis) :
 
-## Objectif
+## B. Objectif & audience
 - Nature du site :
-- Objectif principal (action de conversion) :
-- Cible :
+- Objectif principal (conversion) :
+- Objectifs secondaires :
+- Cible / persona :
+- Proposition de valeur unique :
 
-## Références
-- Sites aimés / concurrents :
-- Ce qui plaît :
+## C. Structure & contenu
+- Sections / pages :
+- Services / prestations :
+- Témoignages : oui / non
+- Équipe à présenter : oui / non
+- Labels / certifications / partenaires :
 
-## Identité visuelle
-- Palette (fournie ou à créer) :
+## D. Réseaux sociaux
+- Instagram : / LinkedIn : / TikTok : / YouTube : / Facebook : / X : / Pinterest : / WhatsApp :
+- (Icônes SVG cliquables, couleur = palette, nouvel onglet)
+
+## E. Identité visuelle
+- Palette : (fournie / logo / à créer)
+- Logo : oui / non (format)
 - Style / ambiance :
-- Niveau d'animation :
+- Typographie :
+- Références / inspirations :
 
-## Contenus
-- Textes : oui / non / à produire
-- Photos : oui / non / à produire
+## F. Médias
+- Photos : pro / à shooter / banque
 - Vidéo : oui / non
-- Logo : oui / non
+- Illustrations / pictos :
+
+## G. Fonctionnalités & conversion
+- Formulaire (champs + destination) :
+- Prise de RDV (outil) :
+- Newsletter (Brevo) : oui / non
+- WhatsApp / chat : oui / non
+- Carte Google Maps : oui / non
+- Bouton d'appel flottant mobile : oui / non
+
+## H. SEO & référencement
+- Mots-clés :
+- Zone SEO local :
+- Google Business Profile : oui / non
+- Concurrents :
+
+## I. Légal & technique
+- Nom de domaine :
+- Hébergement : Hostinger
+- Multilingue :
+- Mentions légales / RGPD / cookies :
+- Analytics :
+
+## J. Animations
+- Niveau d'animation :
 
 ## Notes
 - Contraintes particulières :
 ```
 
-### Étape 5 — Router
+### Étape 4 — Router
 
-Confirmer le brief à l'utilisateur en 3 lignes, puis proposer :
+Récapituler le brief en quelques lignes, signaler ce qui reste « à définir », puis :
 
 > Cadrage terminé. Prochaine étape : `/site-style` pour définir la palette (avec test de
-> lisibilité) et le style, à partir de ce brief.
+> lisibilité) et le style à partir de ce brief.
 
 ## Ce que /site-start ne fait pas
 

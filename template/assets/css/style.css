@@ -182,8 +182,18 @@ h1, h2, h3 { font-family: var(--font-title); line-height: 1.15; font-weight: 700
    10. PIED DE PAGE
    ---------------------------------------------------------------- */
 .site-footer { background: var(--c-bg); border-top: 1px solid var(--c-border); padding-block: 2.5rem; }
-.footer-inner { display: flex; flex-direction: column; gap: 0.75rem; align-items: flex-start; }
+.footer-inner { display: flex; flex-direction: column; gap: 1.25rem; align-items: flex-start; }
 .footer-meta { color: var(--c-text-soft); font-size: var(--fs-small); }
+
+/* Réseaux sociaux : la couleur vient de la palette (currentColor pilote le SVG) */
+.socials { display: flex; gap: 0.6rem; }
+.socials a {
+  display: inline-grid; place-items: center; width: 40px; height: 40px;
+  border-radius: 50%; color: var(--c-primary); border: 1px solid var(--c-border);
+  transition: transform var(--transition), background var(--transition), color var(--transition), border-color var(--transition);
+}
+.socials a:hover { transform: translateY(-2px); background: var(--c-primary); color: var(--c-on-primary); border-color: var(--c-primary); }
+.socials svg { width: 20px; height: 20px; }
 
 /* ================================================================
    RESPONSIVE — points de rupture obligatoires Morphoz
