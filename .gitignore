@@ -1,0 +1,21 @@
+# Tests & captures
+test-results/
+playwright-report/
+.playwright/
+
+# Dépendances (le kit reste zéro-dépendance côté site, mais outils de test possibles)
+node_modules/
+
+# Système
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Éditeurs
+.vscode/
+.idea/
+
+# Secrets — ne jamais committer
+.env
+.env.*
+*.local
