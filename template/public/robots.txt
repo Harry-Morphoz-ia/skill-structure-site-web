@@ -1,5 +1,20 @@
 User-agent: *
 Allow: /
 
+# Robots des IA generatives : autorises explicitement pour que le site
+# puisse etre lu et cite par ChatGPT, Claude, Perplexity, Gemini...
+# (referencement IA / GEO - voir docs/referencement-ia.md du kit)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
 # Renseigner l URL du sitemap une fois le domaine connu :
 # Sitemap: https://www.exemple.com/sitemap-index.xml

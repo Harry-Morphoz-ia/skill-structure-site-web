@@ -17,11 +17,13 @@ export const site = {
 
   // Navigation — adapter selon les pages de la vitrine.
   // Pour une landing page : ne garder qu'une entrée vers l'ancre principale.
+  // Le champ `description` (optionnel) alimente /llms.txt, la carte de visite
+  // du site pour les IA (rempli par /site-geo).
   nav: [
-    { label: 'Accueil', href: '/' },
-    { label: 'Services', href: '/services' },
-    { label: 'À propos', href: '/a-propos' },
-    { label: 'Contact', href: '/contact' },
+    { label: 'Accueil', href: '/', description: '' },
+    { label: 'Services', href: '/services', description: '' },
+    { label: 'À propos', href: '/a-propos', description: '' },
+    { label: 'Contact', href: '/contact', description: '' },
   ],
 
   // Action de conversion principale (bouton mis en avant partout)

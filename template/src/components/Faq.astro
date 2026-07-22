@@ -1,0 +1,39 @@
+---
+// Section FAQ (questions fréquentes) avec données structurées FAQPage
+// générées automatiquement. Double intérêt :
+// - SEO : Google peut afficher les questions dans ses résultats ;
+// - GEO : les IA (ChatGPT, Claude, Perplexity) citent volontiers des
+//   questions/réponses claires et factuelles.
+//
+// Usage dans une page :
+//   <Faq items={[
+//     { q: 'Intervenez-vous le week-end ?', r: 'Oui, sur réservation...' },
+//   ]} />
+const { titre = 'Questions fréquentes', items = [] } = Astro.props;
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: items.map((item) => ({
+    '@type': 'Question',
+    name: item.q,
+    acceptedAnswer: { '@type': 'Answer', text: item.r },
+  })),
+};
+---
+{items.length > 0 && (
+  <section class="section" id="faq">
+    <div class="container">
+      <h2 class="section-title">{titre}</h2>
+      <div class="faq">
+        {items.map((item) => (
+          <details class="faq-item">
+            <summary>{item.q}</summary>
+            <p>{item.r}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  </section>
+)}

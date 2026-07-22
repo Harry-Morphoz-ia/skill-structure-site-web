@@ -124,6 +124,9 @@ ou brancher un déploiement automatique.
 Après la mise en ligne, le site vit avec **`/site-modification`** : toute évolution passe
 par une sauvegarde git, les bonnes méthodes, et une re-vérification avant republication.
 
+En option après `/site-seo` : **`/site-geo`**, le référencement sur les IA (être cité par
+ChatGPT, Claude, Perplexity) — voir `docs/referencement-ia.md`.
+
 ## Stack cible des sites
 
 **Astro** : produit du HTML statique rapide, publiable sur n'importe quel hébergement statique
@@ -151,9 +154,7 @@ animés React là où il faut un effet fort.
 | 9 | Guide de migration d'un site existant vers le kit | ⬜ |
 | 10 | Documentation finale (`docs/guide-creation-site.md`) | ✅ fait |
 | 11 | Cycle de vie : `/site-modification` + mise en ligne multi-hébergeurs + tuto formulaire | ✅ fait |
-
-**Option plus tard :** référencement sur les IA (llms.txt + données structurées enrichies pour
-être cité par les assistants IA), après le SEO classique.
+| 12 | Référencement IA (GEO) : llms.txt auto, FAQ structurée, robots IA, skill `/site-geo` | ✅ fait |
 
 ---
 
