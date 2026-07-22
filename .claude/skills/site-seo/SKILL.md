@@ -40,6 +40,14 @@ Construire le tableau mot-clé ↔ page :
 - **À propos / Contact** → requêtes de marque et locales
 Le noter dans `design-tokens.md` ou en tête de chaque page (commentaire).
 
+**Permaliens (les adresses des pages)** : en kebab-case, sans accents ni majuscules,
+courtes et avec le mot-clé (`/traiteur-mariage`, pas `/page-2` ni
+`/nos-prestations-traiteur-evenementiel-2024`). Une URL publiée **ne change jamais** ;
+si un changement est indispensable après mise en ligne, mettre en place une redirection
+301 côté hébergeur (l'ancienne adresse renvoie vers la nouvelle) pour ne pas perdre le
+référencement acquis. La balise canonical du kit gère automatiquement les doublons
+`/page` vs `/page/`.
+
 ### Étape 3 — Balises par page (props du BaseLayout), AVEC aperçu validé
 
 Pour chaque page, rédiger :

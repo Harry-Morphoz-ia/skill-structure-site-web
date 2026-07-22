@@ -66,6 +66,22 @@ h1, h2, h3 { font-family: var(--font-title); line-height: 1.15; font-weight: 700
 .section-title { font-size: var(--fs-h2); margin-bottom: 0.5rem; }
 .section-lead { color: var(--c-text-soft); margin-bottom: 2.5rem; max-width: 60ch; }
 
+/* Texte long structuré (mentions légales, articles) */
+.prose h2 { font-size: var(--fs-h3); margin: 2rem 0 0.5rem; }
+.prose p { color: var(--c-text-soft); margin-bottom: 1rem; }
+
+/* Lien d'évitement (accessibilité clavier) : invisible jusqu'au focus */
+.skip-link {
+  position: absolute; left: -9999px; top: 0; z-index: 100;
+  background: var(--c-primary); color: var(--c-on-primary);
+  padding: 0.6rem 1rem; border-radius: 0 0 var(--radius-btn) 0;
+}
+.skip-link:focus { left: 0; }
+
+/* Lien discret du pied de page */
+.footer-link { text-decoration: underline; }
+.footer-link:hover { color: var(--c-primary); }
+
 /* ----------------------------------------------------------------
    4. BOUTONS
    ---------------------------------------------------------------- */

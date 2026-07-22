@@ -9,6 +9,10 @@ import { site } from '../config/site.js';
 
 const { title, description = site.tagline, current = '' } = Astro.props;
 const fullTitle = title ? `${title} · ${site.name}` : `${site.name} · ${site.tagline}`;
+
+// URL canonique : l'adresse "officielle" de la page pour Google (évite qu'une même
+// page soit vue en double). Générée dès que `site:` est renseigné dans astro.config.mjs.
+const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site).href : null;
 ---
 <!DOCTYPE html>
 <html lang="fr">
@@ -17,12 +21,15 @@ const fullTitle = title ? `${title} · ${site.name}` : `${site.name} · ${site.t
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{fullTitle}</title>
   <meta name="description" content={description} />
+  {canonical && <link rel="canonical" href={canonical} />}
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <!-- theme-color : à aligner sur --c-primary via /site-construire -->
   <meta name="theme-color" content="#4F46E5" />
 
   <meta property="og:title" content={fullTitle} />
   <meta property="og:description" content={description} />
   <meta property="og:type" content="website" />
+  {canonical && <meta property="og:url" content={canonical} />}
   <meta property="og:image" content="/assets/images/hero/hero.jpg" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -32,8 +39,9 @@ const fullTitle = title ? `${title} · ${site.name}` : `${site.name} · ${site.t
   <SeoSchema />
 </head>
 <body>
+  <a href="#contenu" class="skip-link">Aller au contenu</a>
   <Header current={current} />
-  <main>
+  <main id="contenu">
     <slot />
   </main>
   <Footer />

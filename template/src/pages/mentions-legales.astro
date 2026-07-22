@@ -1,0 +1,49 @@
+---
+// PAGE MENTIONS LÉGALES : obligation légale pour tout site professionnel en France.
+// /site-construire remplit les [À VALIDER] avec les informations réelles du brief
+// (sections A et I). Ne jamais mettre en ligne avec des [À VALIDER] restants.
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site } from '../config/site.js';
+---
+<BaseLayout title="Mentions légales" description="Mentions légales et informations réglementaires.">
+  <section class="section">
+    <div class="container prose" style="max-width: 46rem">
+      <h1 class="section-title">Mentions légales</h1>
+
+      <h2>Éditeur du site</h2>
+      <p>
+        {site.name} · [À VALIDER : forme juridique, ex SARL / auto-entrepreneur]<br />
+        Siège : [À VALIDER : adresse complète]<br />
+        SIREN / SIRET : [À VALIDER]<br />
+        Directeur de la publication : [À VALIDER : nom du responsable]<br />
+        Contact : {site.email} · {site.phone}
+      </p>
+
+      <h2>Hébergement</h2>
+      <p>
+        [À VALIDER : nom de l'hébergeur, ex Hostinger International Ltd]<br />
+        [À VALIDER : adresse de l'hébergeur]
+      </p>
+
+      <h2>Propriété intellectuelle</h2>
+      <p>
+        L'ensemble des contenus de ce site (textes, images, logo) est la propriété de
+        {site.name}, sauf mention contraire. Toute reproduction sans autorisation est interdite.
+      </p>
+
+      <h2>Données personnelles</h2>
+      <p>
+        Les informations transmises via le formulaire de contact sont utilisées uniquement
+        pour répondre à votre demande. Elles ne sont ni vendues, ni cédées à des tiers.
+        Conformément au RGPD, vous pouvez exercer vos droits d'accès, de rectification et
+        de suppression en écrivant à {site.email}.
+      </p>
+
+      <h2>Cookies</h2>
+      <p>
+        Ce site ne dépose pas de cookies de suivi. [À VALIDER : si un outil de mesure
+        d'audience est ajouté, adapter cette section et prévoir un bandeau de consentement.]
+      </p>
+    </div>
+  </section>
+</BaseLayout>

@@ -96,6 +96,20 @@ for (const page of pages) {
   }
 }
 
+// Contrôles au niveau du site entier
+const indexPage = pages.find((p) => relative(dist, p).replace(/\\/g, '/') === 'index.html');
+if (indexPage) {
+  const html = readFileSync(indexPage, 'utf8');
+  if (!/rel="icon"/i.test(html)) warnings.push('index.html : pas de favicon (rel="icon")');
+  if (!/rel="canonical"/i.test(html)) warnings.push('index.html : pas de balise canonical (renseigner site: dans astro.config.mjs)');
+}
+if (!files.some((f) => f.endsWith('404.html'))) {
+  warnings.push('pas de page 404 personnalisée (404.html)');
+}
+if (!files.some((f) => /mentions-legales[\\/]index\.html$|mentions-legales\.html$/.test(f))) {
+  warnings.push('pas de page mentions légales (obligation légale pour un site professionnel en France)');
+}
+
 // Poids des images
 for (const img of images) {
   const kb = statSync(img).size / 1024;

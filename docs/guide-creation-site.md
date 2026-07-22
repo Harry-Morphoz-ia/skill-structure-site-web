@@ -138,5 +138,14 @@ titre SEO, ajout au menu).
 **Ajouter un effet « wow » ?** L'effet aurora du kit s'active en un mot sur le hero. Pour
 d'autres composants animés, voir `docs/animations.md`.
 
+**Faut-il un bandeau cookies ?** Par défaut, non : les sites du kit ne déposent aucun cookie
+de suivi, donc pas de bandeau obligatoire. Si tu ajoutes un outil de mesure d'audience
+(Google Analytics...), le bandeau devient nécessaire ; préfère un outil sans cookie
+(ex : Plausible) pour t'en passer.
+
+**Et les mentions légales ?** Chaque site du kit embarque une page mentions légales
+(obligation légale en France), remplie avec les informations du cahier des charges et liée
+depuis le pied de page. Le contrôle qualité vérifie sa présence.
+
 **Reprendre un site existant dans le kit ?** Voir le guide de migration (`docs/migration.md`,
 à venir).

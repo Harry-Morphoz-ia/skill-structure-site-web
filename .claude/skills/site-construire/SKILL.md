@@ -62,6 +62,13 @@ Depuis le brief :
   exactement ces pages.
 - Composants disponibles : `Hero`, `Card`, `MediaBox`, `ContactForm`, sections
   `.section` / `.section-alt` / `.split` (voir les pages d'exemple du template).
+- **Pages système (dans tous les cas, ne jamais les supprimer)** :
+  - `404.astro` : adapter le ton au client.
+  - `mentions-legales.astro` : remplir TOUS les `[À VALIDER]` avec les infos réelles du
+    brief (sections A et I : forme juridique, SIRET, directeur de publication, hébergeur).
+    **Obligation légale pour un site professionnel en France.**
+  - `public/favicon.svg` : personnaliser (initiale de la société + la couleur `--c-primary`
+    validée). C'est l'icône de l'onglet du navigateur.
 
 ### Étape 6 — Rédiger les contenus
 

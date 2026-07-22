@@ -15,6 +15,10 @@ Elles s'appliquent à tout site produit avec le kit, sans exception.
   (uniques dans tout le site).
 - Les données réelles (nom, téléphone, réseaux, navigation) vivent dans
   `src/config/site.js`, jamais en dur dans une page.
+- **Permaliens** : noms de fichiers de pages en kebab-case, sans accents ni majuscules,
+  courts, avec le mot-clé. Une URL publiée ne change jamais (sinon redirection 301).
+- **Pages système intouchables** : `404.astro` et `mentions-legales.astro` (obligation
+  légale en France) existent sur tout site, avec le lien mentions légales dans le pied de page.
 
 ## Contenus
 

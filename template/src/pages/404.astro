@@ -1,0 +1,20 @@
+---
+// PAGE 404 : affichée quand un visiteur tombe sur une adresse qui n'existe pas.
+// La plupart des hébergeurs statiques (et Astro en aperçu) la servent automatiquement.
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site } from '../config/site.js';
+---
+<BaseLayout title="Page introuvable" description="Cette page n'existe pas ou a été déplacée.">
+  <section class="section">
+    <div class="container">
+      <h1 class="section-title">Page introuvable</h1>
+      <p class="section-lead">
+        Cette page n'existe pas ou a été déplacée. Pas d'inquiétude : tout le reste est bien là.
+      </p>
+      <div class="hero-cta">
+        <a href="/" class="btn btn-primary">Retour à l'accueil</a>
+        <a href={site.cta.href} class="btn btn-ghost">{site.cta.label}</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
