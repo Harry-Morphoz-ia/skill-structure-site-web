@@ -18,6 +18,9 @@ Sortie : `site-[nom]/assets/css/style.css` (bloc `:root` rempli) + `site-[nom]/d
 ## Règles d'or
 
 1. **Une palette n'est validée que si elle passe le test de contraste.** Jamais de couleur au jugé.
+1bis. **Jamais l'esthétique « IA par défaut ».** Pas de dégradé violet/rose générique sans
+   lien avec la marque : la palette se construit depuis le secteur, le style et les
+   références du brief. Deux clients différents ne reçoivent jamais la même palette.
 2. **Toujours expliquer un choix visuel en langage simple** (l'utilisateur n'est pas designer).
 3. Cohérence avec le `brief.md` : style, secteur, objectif de conversion.
 4. Jamais de tiret cadratin ( — ) dans les fichiers produits.

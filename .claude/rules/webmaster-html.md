@@ -20,6 +20,22 @@ Elles s'appliquent à tout site produit avec le kit, sans exception.
 - **Pages système intouchables** : `404.astro` et `mentions-legales.astro` (obligation
   légale en France) existent sur tout site, avec le lien mentions légales dans le pied de page.
 
+## Anti « site IA » — marqueurs interdits
+
+Un site produit avec le kit ne doit JAMAIS ressembler à un template généré par IA.
+Marqueurs interdits, sans exception :
+
+- **Emojis en guise d'icônes ou de puces** dans les contenus du site (🚀✨💡...). Les
+  icônes sont des SVG, les listes sont des listes.
+- **Phrases marketing creuses et interchangeables** : « Élevez votre expérience »,
+  « Des solutions innovantes pour vos besoins », « L'excellence à votre service ».
+  Si la phrase peut s'appliquer à n'importe quelle société, elle est interdite.
+- **Dégradé violet/rose « par défaut »** sans lien avec la marque : les couleurs viennent
+  du client (brief + /site-style), jamais d'une esthétique générique.
+- **Structure clonée à l'identique** : le template est un point de départ, pas un moule.
+  L'ordre, le nombre et le type des sections s'adaptent au secteur et aux références du
+  brief (un traiteur montre ses plats en grand, un consultant montre ses résultats).
+
 ## Contenus
 
 - Jamais de tiret cadratin dans un contenu produit : tiret demi-cadratin ( – ), virgule,

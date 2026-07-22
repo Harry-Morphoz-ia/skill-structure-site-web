@@ -24,6 +24,10 @@ Sortie : un site complet qui build sans erreur + la liste des fichiers médias �
    (bouton CTA visible sans scroller et en fin de page).
 4. **Le build doit passer.** On ne termine jamais sur un site qui ne compile pas.
 5. Jamais de tiret cadratin ( — ) dans les contenus produits.
+6. **Jamais un « site IA ».** Pas d'emojis en icônes, pas de phrases creuses
+   interchangeables, pas de structure clonée du template à l'identique : l'ordre et le
+   type des sections s'adaptent au secteur et aux références du brief (voir la règle
+   anti « site IA » de `webmaster-html.md`).
 
 ## Comment procéder
 
