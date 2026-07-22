@@ -66,6 +66,7 @@ cp -r .claude/rules/*  <ton-projet>/.claude/rules/
 ```
 
 Puis lance `/site-start` pour cadrer ton premier site.
+**Guide pas à pas complet** (de zéro à la mise en ligne) : `docs/guide-creation-site.md`.
 
 ### Lancer un site (template Astro)
 
@@ -114,7 +115,7 @@ animés React là où il faut un effet fort.
 | 7 | SEO : skill `/site-seo` + JSON-LD auto (SeoSchema) + sitemap intégré | ✅ fait |
 | 8 | Vérification : skill `/site-verifier` + outil verifier.mjs (GO/NO-GO) | ✅ fait |
 | 9 | Guide de migration d'un site existant vers le kit | ⬜ |
-| 10 | Documentation finale | ⬜ |
+| 10 | Documentation finale (`docs/guide-creation-site.md`) | ✅ fait |
 
 **Option plus tard :** référencement sur les IA (llms.txt + données structurées enrichies pour
 être cité par les assistants IA), après le SEO classique.
