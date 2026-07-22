@@ -90,7 +90,8 @@ Récap : tableau mot-clé ↔ page, ce qui reste à faire côté client (fiche G
 nom de domaine). Puis :
 
 > SEO en place. Prochaine étape : `/site-verifier` (contrôle qualité complet), puis mise
-> en ligne. Après la mise en ligne : soumettre le sitemap dans Google Search Console.
+> en ligne. Après la mise en ligne : suivre le tuto `docs/indexation-google.md`
+> (Search Console, sitemap, indexation, fiche Google Business).
 
 ## Ce que /site-seo ne fait pas
 

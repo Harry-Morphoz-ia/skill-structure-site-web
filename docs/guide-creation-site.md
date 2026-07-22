@@ -91,9 +91,11 @@ npm run build     # génère le dossier dist/ (les fichiers finaux)
 ```
 
 Publie le contenu de `dist/` sur ton hébergement (Hostinger, Netlify, Vercel, OVH...),
-en upload direct ou via un déploiement automatique. Puis :
-1. Soumets le sitemap dans Google Search Console.
-2. Crée ou relie la fiche Google Business (mêmes nom/adresse/téléphone que le site).
+en upload direct ou via un déploiement automatique.
+
+**Puis déclare le site à Google** (il n'apparaît pas tout seul) : suis le tuto pas à pas
+`docs/indexation-google.md` (Search Console, sitemap, demande d'indexation, fiche Google
+Business, délais réalistes).
 
 ---
 
