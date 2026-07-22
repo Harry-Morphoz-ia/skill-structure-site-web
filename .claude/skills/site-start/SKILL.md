@@ -1,6 +1,6 @@
 ---
 name: site-start
-description: Point d'entrée du kit de création de sites web Morphoz. Mène un cahier des charges complet comme un vrai webmaster (entreprise, objectif de conversion, structure, contenus, réseaux sociaux, identité visuelle, médias, fonctionnalités, SEO local, légal, animations) et écrit un brief.md riche dans le dossier du site. Route ensuite vers /site-style. Utiliser au tout début d'un nouveau site. Ne PAS utiliser pour un site déjà cadré (éditer le brief.md) ni pour une app (c'est /start du kit apps).
+description: Point d'entrée du kit de création de sites web. Mène un cahier des charges complet comme un vrai webmaster (entreprise, objectif de conversion, structure, contenus, réseaux sociaux, identité visuelle, médias, fonctionnalités, SEO local, légal, animations) et écrit un brief.md riche dans le dossier du site. Route ensuite vers /site-style. Utiliser au tout début d'un nouveau site. Ne PAS utiliser pour un site déjà cadré (éditer le brief.md directement).
 ---
 
 # Skill /site-start — cahier des charges guidé d'un nouveau site
@@ -29,10 +29,12 @@ Sortie : `site-[nom-client]/brief.md` rempli + suggestion de lancer `/site-style
 
 ### Étape 1 — Créer le dossier du site
 
-Demander le nom du client, puis :
+Demander le nom du client, puis copier le squelette vers l'emplacement du nouveau site
+(l'emplacement est libre : à côté du kit, dans un dossier `sites/`, etc.) :
 
 ```bash
-cp -r kit-site-web/template "Site web/site-[nom-kebab]"
+# Depuis la racine du kit
+cp -r template "../site-[nom-kebab]"
 ```
 
 ### Étape 2 — Le questionnaire (10 sections)
@@ -106,7 +108,7 @@ Dérouler les sections dans l'ordre. Pour chaque section : une phrase d'intro, p
 
 **Section I — Légal & technique**
 - Nom de domaine : déjà acheté ? souhaité ?
-- Hébergement (Hostinger par défaut Morphoz)
+- Hébergement (Hostinger, Netlify, Vercel, OVH, GitHub Pages…)
 - Multilingue ? Si oui, quelles langues ?
 - Mentions légales, politique de confidentialité, bandeau cookies (RGPD) à prévoir ?
 - Suivi d'audience (Google Analytics / autre) ?
@@ -177,7 +179,7 @@ Créer `site-[nom-kebab]/brief.md` avec la trame ci-dessous (remplir, « à déf
 
 ## I. Légal & technique
 - Nom de domaine :
-- Hébergement : Hostinger
+- Hébergement :
 - Multilingue :
 - Mentions légales / RGPD / cookies :
 - Analytics :
@@ -200,4 +202,4 @@ Récapituler le brief en quelques lignes, signaler ce qui reste « à définir �
 
 - Ne construit aucun code (c'est `/site-construire`).
 - Ne choisit pas les couleurs finales ni ne teste le contraste (c'est `/site-style`).
-- Ne déploie rien (c'est la livraison Hostinger).
+- Ne déploie rien (c'est l'étape de mise en ligne).

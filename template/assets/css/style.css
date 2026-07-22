@@ -1,20 +1,20 @@
 /* ================================================================
-   TEMPLATE MORPHOZ — feuille de style
+   TEMPLATE — feuille de style
    Tout le style passe par les "design tokens" ci-dessous (les :root).
    Pour re-styler un site : /site-style ne change QUE ces variables.
    Approche mobile-first : le CSS de base = mobile, les @media agrandissent.
    ================================================================ */
 
 /* ----------------------------------------------------------------
-   1. DESIGN TOKENS — valeurs par défaut = design system Morphoz
+   1. DESIGN TOKENS — palette neutre par défaut, remplacée par /site-style
    ---------------------------------------------------------------- */
 :root {
   /* Couleurs (remplacées par site via /site-style, contraste vérifié WCAG AA) */
   --c-bg:            #FFFFFF;
   --c-text:         #0F0F0F;
   --c-text-soft:    #6B7280;
-  --c-primary:      #7B2FFF;
-  --c-primary-soft: #A855F7;
+  --c-primary:      #4F46E5;
+  --c-primary-soft: #6366F1;
   --c-surface:      #F5F5F7;
   --c-surface-alt:  #F9FAFB;
   --c-border:       #E5E7EB;
@@ -196,7 +196,7 @@ h1, h2, h3 { font-family: var(--font-title); line-height: 1.15; font-weight: 700
 .socials svg { width: 20px; height: 20px; }
 
 /* ================================================================
-   RESPONSIVE — points de rupture obligatoires Morphoz
+   RESPONSIVE — points de rupture obligatoires
    Base = mobile (320px+). On agrandit à partir de 768 et 1024.
    ================================================================ */
 @media (min-width: 768px) {

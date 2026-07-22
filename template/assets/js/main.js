@@ -1,5 +1,5 @@
 /* ================================================================
-   TEMPLATE MORPHOZ — interactions légères (vanilla, zéro dépendance)
+   TEMPLATE — interactions légères (vanilla, zéro dépendance)
    ================================================================ */
 
 // 1. Menu burger : ouvre/ferme la navigation sur mobile
