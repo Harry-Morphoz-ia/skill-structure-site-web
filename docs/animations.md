@@ -88,13 +88,15 @@ Activation / désactivation en un mot, dans une page :
 <Hero title="..." />            <!-- sans l'effet (site sobre) -->
 ```
 
-## État du connecteur 21st.dev (à date)
+## État du connecteur 21st.dev (testé le 22/07/2026)
 
-La clé et l'authentification fonctionnent, mais la version actuelle du serveur
-`@21st-dev/magic` renvoie parfois ses réponses dans un format illisible pour le client MCP
-(`[object Object]`). Contournement en attendant leur correctif : piocher les composants
-directement sur <https://21st.dev> (copier-coller, comme Aceternity). Retester le connecteur
-après mise à jour (`@latest` est déjà utilisé, il se mettra à jour seul).
+- ✅ **`logo_search` fonctionne** : récupère les logos officiels de marques (SVG complets avec
+  leurs vraies couleurs). Utile pour la section « logos clients / partenaires » d'un site.
+- ❌ **Le générateur de composants (`component_builder` / `component_inspiration`) est cassé
+  côté 21st.dev** : il renvoie `[object Object]` au lieu du code (bug de leur serveur, pas de
+  votre config). Contournement : piocher les composants directement sur <https://21st.dev>
+  (copier-coller, comme Aceternity). Le connecteur utilise `@latest` : il se mettra à jour
+  tout seul, retester de temps en temps.
 
 ## Règle d'usage
 
