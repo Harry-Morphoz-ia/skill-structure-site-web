@@ -56,11 +56,13 @@ git clone https://github.com/<compte>/skill-structure-site-web.git
 cd skill-structure-site-web
 ```
 
-Pour rendre les skills invocables (`/site-start`, etc.), copie le dossier `.claude/skills/` dans
-le `.claude/` de ton projet (ou à la racine où tu lances Claude Code) :
+Pour rendre les skills invocables (`/site-start`, etc.) et activer les règles webmaster
+auto-chargées, copie les dossiers `.claude/skills/` et `.claude/rules/` dans le `.claude/`
+de ton projet (ou à la racine où tu lances Claude Code) :
 
 ```bash
 cp -r .claude/skills/* <ton-projet>/.claude/skills/
+cp -r .claude/rules/*  <ton-projet>/.claude/rules/
 ```
 
 Puis lance `/site-start` pour cadrer ton premier site.
@@ -108,7 +110,7 @@ animés React là où il faut un effet fort.
 | 3 | Skill `/site-style` : palette + typo + test de contraste + choix animations | ✅ fait |
 | 4 | Template Astro multi-pages + React + effet aurora fourni (21st/Aceternity en copier-coller, voir docs/animations.md) | ✅ fait |
 | 5 | Skill `/site-construire` : génère le site Astro depuis brief + tokens | ✅ fait |
-| 6 | Règles webmaster auto-chargées (Hn, typo, boutons, contraste, images) | ⬜ |
+| 6 | Règles webmaster auto-chargées (webmaster-html.md, webmaster-css.md) | ✅ fait |
 | 7 | SEO : skill `/site-seo` + JSON-LD auto (SeoSchema) + sitemap intégré | ✅ fait |
 | 8 | Vérification : skill `/site-verifier` + outil verifier.mjs (GO/NO-GO) | ✅ fait |
 | 9 | Guide de migration d'un site existant vers le kit | ⬜ |
