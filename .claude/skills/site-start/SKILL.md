@@ -60,13 +60,27 @@ Dérouler les sections dans l'ordre. Pour chaque section : une phrase d'intro, p
 - Proposition de valeur unique : qu'est-ce qui vous différencie des concurrents ?
 *Pourquoi : tout le site doit pousser vers l'objectif principal ; la cible fixe le ton.*
 
-**Section C — Structure & contenu**
-- Quelles sections/pages ? (accueil, services, à propos, réalisations/galerie, tarifs, FAQ, avis clients, blog, contact) *(choix multiple)*
+**Section C — Structure & pages** *(dépend de la nature choisie en Section B)*
+
+- **Landing page** → site d'UNE seule page. **Ne pas demander de nombre de pages.**
+  Déterminer l'ordre des blocs de cette page unique : accroche (hero) · bénéfices · preuve (avis, chiffres, logos) · offre/services · appel à l'action final. Tout converge vers l'objectif unique.
+
+- **Site vitrine** → site MULTI-PAGES. Déterminer :
+  1. **Le nombre de pages** (souvent 3 à 6).
+  2. **Pour CHAQUE page** : son **titre**, son **rôle / sa valeur** (ce qu'elle apporte au visiteur), et comment elle ramène vers l'objectif de conversion.
+  Pages fréquentes : Accueil · À propos · Services (ou une page par service) · Tarifs · Réalisations/Galerie · Prise de RDV · Contact · FAQ · Blog.
+  Formaliser une ligne par page, ex : « Services → présente les 3 prestations, chacune avec un bouton Prendre RDV ».
+
+- **E-commerce** → Accueil · Catalogue · Fiche produit · Panier · Contact (+ pages légales).
+- **Portfolio** → Accueil · Projets/Réalisations · À propos · Contact.
+
+Dans tous les cas, noter aussi :
 - Liste des services/prestations à présenter
 - Témoignages / avis clients disponibles ?
 - Équipe à présenter (photos, rôles) ?
 - Labels, certifications, partenaires, logos clients à afficher ?
-*Pourquoi : ça définit l'arborescence et les blocs à construire.*
+
+*Pourquoi : l'arborescence dicte le nombre de fichiers/pages, la navigation, et où placer les boutons de conversion.*
 
 **Section D — Réseaux sociaux**
 - Sur quels réseaux la société est-elle présente, et quel est le lien de chacun ?
@@ -140,8 +154,10 @@ Créer `site-[nom-kebab]/brief.md` avec la trame ci-dessous (remplir, « à déf
 - Cible / persona :
 - Proposition de valeur unique :
 
-## C. Structure & contenu
-- Sections / pages :
+## C. Structure & pages
+- Type : page unique (landing) / multi-pages (vitrine)
+- Arborescence (une ligne par page : Titre – rôle/valeur – lien vers la conversion) :
+  - Accueil :
 - Services / prestations :
 - Témoignages : oui / non
 - Équipe à présenter : oui / non

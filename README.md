@@ -100,6 +100,8 @@ animés React là où il faut un effet fort.
 
 ---
 
-## Crédits
+## Licence
 
-Kit de méthode pour la création de sites web. Réutilisable et adaptable librement.
+Distribué sous licence **MIT** (voir le fichier `LICENSE`) : libre d'utilisation, de modification
+et de revente. Dans `LICENSE`, remplace **« votre société »** par le nom sous lequel tu veux
+apparaître comme auteur (ton nom ou celui de ton agence).
