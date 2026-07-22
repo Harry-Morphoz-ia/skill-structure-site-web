@@ -110,7 +110,7 @@ animés React là où il faut un effet fort.
 | 5 | Skill `/site-construire` : génère le site Astro depuis brief + tokens | ✅ fait |
 | 6 | Règles webmaster auto-chargées (Hn, typo, boutons, contraste, images) | ⬜ |
 | 7 | SEO : skill `/site-seo` + JSON-LD auto (SeoSchema) + sitemap intégré | ✅ fait |
-| 8 | Vérification automatique (Playwright + contraste + Lighthouse) | ⬜ |
+| 8 | Vérification : skill `/site-verifier` + outil verifier.mjs (GO/NO-GO) | ✅ fait |
 | 9 | Guide de migration d'un site existant vers le kit | ⬜ |
 | 10 | Documentation finale | ⬜ |
 
