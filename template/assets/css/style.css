@@ -1,0 +1,215 @@
+/* ================================================================
+   TEMPLATE MORPHOZ — feuille de style
+   Tout le style passe par les "design tokens" ci-dessous (les :root).
+   Pour re-styler un site : /site-style ne change QUE ces variables.
+   Approche mobile-first : le CSS de base = mobile, les @media agrandissent.
+   ================================================================ */
+
+/* ----------------------------------------------------------------
+   1. DESIGN TOKENS — valeurs par défaut = design system Morphoz
+   ---------------------------------------------------------------- */
+:root {
+  /* Couleurs (remplacées par site via /site-style, contraste vérifié WCAG AA) */
+  --c-bg:            #FFFFFF;
+  --c-text:         #0F0F0F;
+  --c-text-soft:    #6B7280;
+  --c-primary:      #7B2FFF;
+  --c-primary-soft: #A855F7;
+  --c-surface:      #F5F5F7;
+  --c-surface-alt:  #F9FAFB;
+  --c-border:       #E5E7EB;
+  --c-bg-dark:      #08090E;
+  --c-on-primary:   #FFFFFF;
+
+  /* Typographie fluide — jamais de px fixe, clamp(min, idéal, max) */
+  --font-title: 'Montserrat', system-ui, sans-serif;
+  --font-body:  'Montserrat', system-ui, sans-serif;
+  --fs-h1:   clamp(2rem, 5vw + 1rem, 3.5rem);
+  --fs-h2:   clamp(1.6rem, 3vw + 0.5rem, 2.4rem);
+  --fs-h3:   clamp(1.15rem, 1.5vw + 0.5rem, 1.4rem);
+  --fs-body: clamp(1rem, 0.5vw + 0.9rem, 1.125rem);
+  --fs-small: 0.875rem;
+
+  /* Rythme & formes */
+  --space:      clamp(1rem, 3vw, 2rem);
+  --section-y:  clamp(3.5rem, 8vw, 6rem);
+  --container:  1200px;
+  --radius:     10px;
+  --radius-btn: 8px;
+  --shadow:     0 8px 30px rgba(15, 15, 15, 0.06);
+  --transition: 200ms ease;
+}
+
+/* ----------------------------------------------------------------
+   2. RESET LÉGER
+   ---------------------------------------------------------------- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: 1.65;
+  color: var(--c-text);
+  background: var(--c-bg);
+}
+img { max-width: 100%; height: auto; display: block; }
+a { color: inherit; text-decoration: none; }
+ul { list-style: none; }
+h1, h2, h3 { font-family: var(--font-title); line-height: 1.15; font-weight: 700; }
+
+/* ----------------------------------------------------------------
+   3. UTILITAIRES
+   ---------------------------------------------------------------- */
+.container { width: 100%; max-width: var(--container); margin-inline: auto; padding-inline: var(--space); }
+.section { padding-block: var(--section-y); }
+.section-alt { background: var(--c-surface-alt); }
+.section-title { font-size: var(--fs-h2); margin-bottom: 0.5rem; }
+.section-lead { color: var(--c-text-soft); margin-bottom: 2.5rem; max-width: 60ch; }
+
+/* ----------------------------------------------------------------
+   4. BOUTONS
+   ---------------------------------------------------------------- */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  gap: 0.5rem; padding: 0.85rem 1.6rem;
+  font-family: var(--font-title); font-weight: 600; font-size: var(--fs-body);
+  border: 2px solid transparent; border-radius: var(--radius-btn);
+  cursor: pointer; transition: transform var(--transition), background var(--transition), box-shadow var(--transition);
+}
+.btn:hover { transform: translateY(-2px); }
+.btn-primary { background: var(--c-primary); color: var(--c-on-primary); }
+.btn-primary:hover { box-shadow: 0 10px 24px rgba(123, 47, 255, 0.3); }
+.btn-ghost { background: transparent; color: var(--c-text); border-color: var(--c-border); }
+.btn-ghost:hover { border-color: var(--c-primary); color: var(--c-primary); }
+.btn-block { width: 100%; }
+
+/* ----------------------------------------------------------------
+   5. EN-TÊTE + NAVIGATION
+   ---------------------------------------------------------------- */
+.site-header {
+  position: sticky; top: 0; z-index: 50;
+  background: color-mix(in srgb, var(--c-bg) 88%, transparent);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--c-border);
+}
+.header-inner { display: flex; align-items: center; justify-content: space-between; min-height: 68px; }
+.logo { font-family: var(--font-title); font-weight: 700; font-size: 1.25rem; color: var(--c-primary); }
+
+.nav {
+  position: fixed; inset: 68px 0 auto 0;
+  flex-direction: column; gap: 0;
+  background: var(--c-bg); border-bottom: 1px solid var(--c-border);
+  transform: translateY(-120%); transition: transform var(--transition);
+  display: flex;
+}
+.nav.open { transform: translateY(0); }
+.nav a { padding: 1rem var(--space); border-top: 1px solid var(--c-border); }
+.nav a.btn-nav { margin: 1rem var(--space); border: none; padding: 0.85rem 1.6rem; }
+
+.burger { display: inline-flex; flex-direction: column; gap: 5px; background: none; border: 0; cursor: pointer; padding: 0.5rem; }
+.burger span { width: 26px; height: 2px; background: var(--c-text); transition: var(--transition); }
+.burger[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.burger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.burger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ----------------------------------------------------------------
+   6. HERO
+   ---------------------------------------------------------------- */
+.hero {
+  position: relative;
+  display: grid; align-items: center; min-height: 78vh;
+  /* Fond TOUJOURS sombre : voile sombre + hero.jpg (si déposé) par-dessus une
+     couleur de secours sombre. Sans image, seul le voile + le fond sombre restent.
+     Résultat : texte blanc lisible dans les deux cas. */
+  background-color: var(--c-bg-dark, #08090E);
+  background-image: linear-gradient(rgba(8,9,14,0.55), rgba(8,9,14,0.55)), url('../images/hero/hero.jpg');
+  background-size: cover; background-position: center;
+  overflow: hidden;
+}
+.hero-inner { padding-block: var(--section-y); max-width: 42rem; }
+.hero-title { font-size: var(--fs-h1); color: #fff; }
+.hero-sub { font-size: var(--fs-body); color: rgba(255,255,255,0.82); margin-block: 1.25rem 2rem; }
+.hero-cta { display: flex; flex-wrap: wrap; gap: 1rem; }
+.hero .btn-ghost { color: #fff; border-color: rgba(255,255,255,0.6); }
+.hero .btn-ghost:hover { border-color: #fff; background: rgba(255,255,255,0.1); color: #fff; }
+
+/* ----------------------------------------------------------------
+   7. GRILLES & CARTES
+   ---------------------------------------------------------------- */
+.grid { display: grid; gap: 1.5rem; }
+.grid-3 { grid-template-columns: 1fr; }
+.card {
+  background: var(--c-surface); border: 1px solid var(--c-border);
+  border-radius: var(--radius); padding: 2rem 1.75rem;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+.card-icon { font-family: var(--font-title); font-weight: 700; color: var(--c-primary); font-size: 1.5rem; margin-bottom: 0.75rem; }
+.card h3 { font-size: var(--fs-h3); margin-bottom: 0.5rem; }
+.card p { color: var(--c-text-soft); }
+
+/* ----------------------------------------------------------------
+   8. SECTION SPLIT (texte + média)
+   ---------------------------------------------------------------- */
+.split { display: grid; gap: 2.5rem; align-items: center; }
+.split-text p { color: var(--c-text-soft); margin-bottom: 1.25rem; }
+.split-media img, .tile img { width: 100%; border-radius: var(--radius); object-fit: cover; aspect-ratio: 4 / 3; }
+
+/* Placeholder élégant quand aucune image n'est encore déposée */
+[data-media].media-empty { position: relative; }
+[data-media].media-empty img { display: none; }
+[data-media].media-empty::after {
+  content: "Déposez " attr(data-file);
+  display: grid; place-items: center; text-align: center;
+  aspect-ratio: 4 / 3; border-radius: var(--radius);
+  background: repeating-linear-gradient(45deg, var(--c-surface), var(--c-surface) 12px, var(--c-surface-alt) 12px, var(--c-surface-alt) 24px);
+  border: 2px dashed var(--c-border); color: var(--c-text-soft); font-size: var(--fs-small); padding: 1rem;
+}
+
+/* ----------------------------------------------------------------
+   9. CONTACT
+   ---------------------------------------------------------------- */
+.contact-list li { padding-block: 0.35rem; color: var(--c-text-soft); }
+.contact-form { display: grid; gap: 1rem; background: var(--c-bg); border: 1px solid var(--c-border); border-radius: var(--radius); padding: 1.75rem; box-shadow: var(--shadow); }
+.contact-form label { display: grid; gap: 0.4rem; font-weight: 600; font-size: var(--fs-small); }
+.contact-form input, .contact-form textarea {
+  font: inherit; padding: 0.75rem 0.9rem; border: 1px solid var(--c-border);
+  border-radius: var(--radius-btn); background: var(--c-surface-alt); color: var(--c-text);
+}
+.contact-form input:focus, .contact-form textarea:focus { outline: 2px solid var(--c-primary); border-color: transparent; }
+
+/* ----------------------------------------------------------------
+   10. PIED DE PAGE
+   ---------------------------------------------------------------- */
+.site-footer { background: var(--c-bg); border-top: 1px solid var(--c-border); padding-block: 2.5rem; }
+.footer-inner { display: flex; flex-direction: column; gap: 0.75rem; align-items: flex-start; }
+.footer-meta { color: var(--c-text-soft); font-size: var(--fs-small); }
+
+/* ================================================================
+   RESPONSIVE — points de rupture obligatoires Morphoz
+   Base = mobile (320px+). On agrandit à partir de 768 et 1024.
+   ================================================================ */
+@media (min-width: 768px) {
+  .grid-3 { grid-template-columns: repeat(2, 1fr); }
+  .split { grid-template-columns: 1fr 1fr; }
+  .footer-inner { flex-direction: row; justify-content: space-between; align-items: center; }
+}
+
+@media (min-width: 1024px) {
+  .grid-3 { grid-template-columns: repeat(3, 1fr); }
+
+  /* Menu horizontal sur desktop : on annule le burger */
+  .burger { display: none; }
+  .nav {
+    position: static; inset: auto; transform: none;
+    flex-direction: row; align-items: center; gap: 0.25rem;
+    background: none; border: none;
+  }
+  .nav a { border: 0; padding: 0.5rem 1rem; }
+  .nav a.btn-nav { margin: 0 0 0 0.75rem; }
+}
+
+/* Respect des préférences d'accessibilité : coupe les animations */
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ============================================================
+       SEO — à personnaliser par site (rempli plus tard par /site-seo)
+       ============================================================ -->
+  <title>Nom du site · Accroche courte</title>
+  <meta name="description" content="Phrase de 150 caractères max qui résume l'offre et donne envie de cliquer." />
+  <meta name="theme-color" content="#7B2FFF" />
+
+  <!-- Open Graph (aperçu quand on partage le lien) -->
+  <meta property="og:title" content="Nom du site · Accroche courte" />
+  <meta property="og:description" content="Même phrase que la description." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/images/hero/hero.jpg" />
+
+  <!-- Polices : Montserrat par défaut Morphoz (à changer selon la charte client) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body>
+
+  <!-- ============================================================
+       EN-TÊTE + NAVIGATION (menu burger auto sur mobile)
+       ============================================================ -->
+  <header class="site-header" id="haut">
+    <div class="container header-inner">
+      <a href="#haut" class="logo">NomClient</a>
+
+      <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav" id="menu">
+        <a href="#services">Services</a>
+        <a href="#apropos">À propos</a>
+        <a href="#galerie">Réalisations</a>
+        <a href="#contact" class="btn btn-primary btn-nav">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============================================================
+         HERO — la première chose qu'on voit. Un seul <h1> sur la page.
+         Image de fond : dépose assets/images/hero/hero.jpg
+         ============================================================ -->
+    <section class="hero" data-media="hero">
+      <div class="container hero-inner">
+        <h1 class="hero-title">La promesse principale du client, en une phrase forte.</h1>
+        <p class="hero-sub">Le sous-titre qui précise pour qui, et pourquoi c'est différent. Une à deux lignes.</p>
+        <div class="hero-cta">
+          <a href="#contact" class="btn btn-primary">Action principale</a>
+          <a href="#services" class="btn btn-ghost">En savoir plus</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SERVICES / POINTS FORTS — grille de cartes
+         ============================================================ -->
+    <section class="section" id="services">
+      <div class="container">
+        <h2 class="section-title">Ce que nous proposons</h2>
+        <p class="section-lead">Une phrase d'introduction sous le titre de section.</p>
+
+        <div class="grid grid-3">
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">01</div>
+            <h3>Premier service</h3>
+            <p>Description courte du bénéfice pour le client, pas de la fonctionnalité.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">02</div>
+            <h3>Deuxième service</h3>
+            <p>Description courte du bénéfice pour le client, pas de la fonctionnalité.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">03</div>
+            <h3>Troisième service</h3>
+            <p>Description courte du bénéfice pour le client, pas de la fonctionnalité.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         À PROPOS — texte + visuel. Dépose assets/images/galerie/apropos.jpg
+         ============================================================ -->
+    <section class="section section-alt" id="apropos">
+      <div class="container split">
+        <div class="split-text">
+          <h2 class="section-title">À propos</h2>
+          <p>Paragraphe qui raconte l'histoire, l'expertise ou la valeur du client. Rester concret.</p>
+          <p>Un deuxième paragraphe si nécessaire, puis un appel à l'action.</p>
+          <a href="#contact" class="btn btn-primary">Nous contacter</a>
+        </div>
+        <div class="split-media" data-media="image" data-file="apropos.jpg">
+          <img src="assets/images/galerie/apropos.jpg" alt="Décrire l'image pour l'accessibilité et le SEO"
+               loading="lazy" onerror="this.closest('[data-media]').classList.add('media-empty')" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         GALERIE / RÉALISATIONS — dépose tes photos dans assets/images/galerie/
+         ============================================================ -->
+    <section class="section" id="galerie">
+      <div class="container">
+        <h2 class="section-title">Nos réalisations</h2>
+        <div class="grid grid-3 gallery">
+          <figure class="tile" data-media="image" data-file="galerie/01.jpg">
+            <img src="assets/images/galerie/01.jpg" alt="Décrire la réalisation" loading="lazy"
+                 onerror="this.closest('[data-media]').classList.add('media-empty')" />
+          </figure>
+          <figure class="tile" data-media="image" data-file="galerie/02.jpg">
+            <img src="assets/images/galerie/02.jpg" alt="Décrire la réalisation" loading="lazy"
+                 onerror="this.closest('[data-media]').classList.add('media-empty')" />
+          </figure>
+          <figure class="tile" data-media="image" data-file="galerie/03.jpg">
+            <img src="assets/images/galerie/03.jpg" alt="Décrire la réalisation" loading="lazy"
+                 onerror="this.closest('[data-media]').classList.add('media-empty')" />
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         CONTACT — le formulaire pointe vers un service tiers (Formspree,
+         webhook n8n, Brevo). Remplacer l'action ci-dessous.
+         ============================================================ -->
+    <section class="section section-alt" id="contact">
+      <div class="container split">
+        <div class="split-text">
+          <h2 class="section-title">Contact</h2>
+          <p>Un mot d'accroche pour inviter à écrire ou appeler.</p>
+          <ul class="contact-list">
+            <li><strong>Téléphone</strong> : 00 00 00 00 00</li>
+            <li><strong>Email</strong> : contact@client.fr</li>
+            <li><strong>Zone</strong> : ville / département</li>
+          </ul>
+        </div>
+        <form class="contact-form" action="REMPLACER_PAR_URL_FORMSPREE_OU_N8N" method="POST">
+          <label>Nom <input type="text" name="nom" required /></label>
+          <label>Email <input type="email" name="email" required /></label>
+          <label>Message <textarea name="message" rows="4" required></textarea></label>
+          <button type="submit" class="btn btn-primary btn-block">Envoyer</button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       PIED DE PAGE
+       ============================================================ -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span class="logo">NomClient</span>
+      <p class="footer-meta">© <span id="annee"></span> NomClient. Site réalisé par Morphoz IA.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
