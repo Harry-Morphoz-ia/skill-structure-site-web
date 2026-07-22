@@ -55,7 +55,7 @@ kit-site-web/
 
 | Phase | Objet | État |
 |-------|-------|------|
-| 0 | Fondations git + structure du kit | 🟡 en cours |
+| 0 | Fondations git + structure du kit | ✅ fait |
 | 1 | Squelette de site (template zéro-config) | ⬜ |
 | 2 | Règles webmaster auto-chargées (Hn, typo, boutons, contraste, images) | ⬜ |
 | 3 | Skills de méthode (`/site-cadrer`, `/site-style`, `/site-construire`) | ⬜ |
