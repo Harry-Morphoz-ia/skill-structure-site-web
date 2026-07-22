@@ -36,4 +36,14 @@ export const site = {
     youtube: '',
     facebook: '',
   },
+
+  // SEO — rempli par /site-seo depuis la section H du brief.
+  // Alimente les données structurées JSON-LD (la carte d'identité du site pour Google).
+  seo: {
+    url: '',                        // URL finale du site (ex : 'https://www.exemple.com')
+    businessType: 'LocalBusiness',  // ou 'Restaurant', 'Plumber', 'BeautySalon'... (types Schema.org)
+    city: '',                       // ville principale (SEO local)
+    region: '',                     // département / région
+    openingHours: '',               // ex : 'Mo-Fr 09:00-18:00'
+  },
 };

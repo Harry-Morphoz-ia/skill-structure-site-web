@@ -70,6 +70,11 @@ Depuis le brief :
   témoignages section C) près des CTA.
 - Contenus fournis par le client → les utiliser tels quels (corriger l'orthographe).
 - Contenus manquants → texte provisoire pertinent marqué `[À VALIDER]`.
+- **Densité obligatoire : un vrai site, pas le squelette de démo.** Chaque page clé doit
+  avoir un contenu complet et substantiel (viser 300 mots minimum sur les pages qui doivent
+  se référencer : accueil, services, à propos). Plusieurs sections par page, développées à
+  partir de la matière du brief. Une page de 2 phrases = travail non terminé. Le template
+  n'est pas une limite : dupliquer sections, cartes et paragraphes autant que nécessaire.
 
 ### Étape 7 — Fonctionnalités de conversion (section G)
 

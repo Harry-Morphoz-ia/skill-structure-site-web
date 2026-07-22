@@ -109,7 +109,7 @@ animés React là où il faut un effet fort.
 | 4 | Template Astro multi-pages + React + effet aurora fourni (21st/Aceternity en copier-coller, voir docs/animations.md) | ✅ fait |
 | 5 | Skill `/site-construire` : génère le site Astro depuis brief + tokens | ✅ fait |
 | 6 | Règles webmaster auto-chargées (Hn, typo, boutons, contraste, images) | ⬜ |
-| 7 | SEO (meta, sitemap, JSON-LD) | ⬜ |
+| 7 | SEO : skill `/site-seo` + JSON-LD auto (SeoSchema) + sitemap intégré | ✅ fait |
 | 8 | Vérification automatique (Playwright + contraste + Lighthouse) | ⬜ |
 | 9 | Guide de migration d'un site existant vers le kit | ⬜ |
 | 10 | Documentation finale | ⬜ |

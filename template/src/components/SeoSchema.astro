@@ -1,0 +1,36 @@
+---
+// Données structurées JSON-LD (Schema.org) : la « carte d'identité » invisible
+// que Google lit pour comprendre qui est la société (nom, adresse, horaires...).
+// Alimenté automatiquement par src/config/site.js — ne s'affiche que si les
+// informations minimales (nom + ville ou URL) sont renseignées.
+import { site } from '../config/site.js';
+
+const seo = site.seo || {};
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': seo.businessType || 'LocalBusiness',
+  name: site.name,
+  ...(seo.url && { url: seo.url }),
+  ...(site.phone && { telephone: site.phone }),
+  ...(site.email && { email: site.email }),
+  ...((seo.city || seo.region) && {
+    address: {
+      '@type': 'PostalAddress',
+      ...(site.address && { streetAddress: site.address }),
+      ...(seo.city && { addressLocality: seo.city }),
+      ...(seo.region && { addressRegion: seo.region }),
+      addressCountry: 'FR',
+    },
+  }),
+  ...(site.area && { areaServed: site.area }),
+  ...(seo.openingHours && { openingHours: seo.openingHours }),
+  ...(Object.values(site.socials || {}).some(Boolean) && {
+    sameAs: Object.values(site.socials).filter(Boolean),
+  }),
+};
+
+// N'émettre le schéma que s'il apporte au moins la ville ou l'URL (sinon inutile pour Google)
+const enabled = Boolean(seo.url || seo.city);
+---
+{enabled && <script type="application/ld+json" set:html={JSON.stringify(schema)} />}
